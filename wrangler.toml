@@ -1,0 +1,16 @@
+name = "frisco-biryani"
+main = ".open-next/worker.js"
+compatibility_date = "2026-06-01"
+
+[vars]
+NEXT_PUBLIC_SITE_URL = "https://friscobiryani.com"
+
+[[d1_databases]]
+binding = "FRISCO_BIRYANI_DB"
+database_name = "frisco-biryani-db"
+database_id = "4a8f51ab-68d0-4f94-8ebe-1ce1808aea46"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "frisco-biryani-db"
+database_id = "4a8f51ab-68d0-4f94-8ebe-1ce1808aea46"
