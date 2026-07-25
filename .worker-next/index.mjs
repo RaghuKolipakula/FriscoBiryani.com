@@ -24556,7 +24556,7 @@ var require_load_manifest = __commonJS({
         
 
           if (path.endsWith(".next/prerender-manifest.json")) {
-            return {"version":4,"routes":{"/bid":{"experimentalBypassFor":[{"type":"header","key":"Next-Action"},{"type":"header","key":"content-type","value":"multipart/form-data;.*"}],"initialRevalidateSeconds":false,"srcRoute":"/bid","dataRoute":"/bid.rsc"},"/privacy":{"experimentalBypassFor":[{"type":"header","key":"Next-Action"},{"type":"header","key":"content-type","value":"multipart/form-data;.*"}],"initialRevalidateSeconds":false,"srcRoute":"/privacy","dataRoute":"/privacy.rsc"},"/":{"experimentalBypassFor":[{"type":"header","key":"Next-Action"},{"type":"header","key":"content-type","value":"multipart/form-data;.*"}],"initialRevalidateSeconds":false,"srcRoute":"/","dataRoute":"/index.rsc"},"/terms":{"experimentalBypassFor":[{"type":"header","key":"Next-Action"},{"type":"header","key":"content-type","value":"multipart/form-data;.*"}],"initialRevalidateSeconds":false,"srcRoute":"/terms","dataRoute":"/terms.rsc"},"/admin":{"experimentalBypassFor":[{"type":"header","key":"Next-Action"},{"type":"header","key":"content-type","value":"multipart/form-data;.*"}],"initialRevalidateSeconds":false,"srcRoute":"/admin","dataRoute":"/admin.rsc"}},"dynamicRoutes":{},"notFoundRoutes":[],"preview":{"previewModeId":"1701ceeff8dc0eaf6825b1f4f7ea6fc9","previewModeSigningKey":"5fd57137304d7a24f1d089d4d60b5c3833030517160c2f93a272c52e8d7a98d3","previewModeEncryptionKey":"26daeb70570606fbbeb322806521887723531f2ffab2b49fb9e59697255efbb4"}};
+            return {"version":4,"routes":{"/bid":{"experimentalBypassFor":[{"type":"header","key":"Next-Action"},{"type":"header","key":"content-type","value":"multipart/form-data;.*"}],"initialRevalidateSeconds":false,"srcRoute":"/bid","dataRoute":"/bid.rsc"},"/terms":{"experimentalBypassFor":[{"type":"header","key":"Next-Action"},{"type":"header","key":"content-type","value":"multipart/form-data;.*"}],"initialRevalidateSeconds":false,"srcRoute":"/terms","dataRoute":"/terms.rsc"},"/":{"experimentalBypassFor":[{"type":"header","key":"Next-Action"},{"type":"header","key":"content-type","value":"multipart/form-data;.*"}],"initialRevalidateSeconds":false,"srcRoute":"/","dataRoute":"/index.rsc"},"/admin":{"experimentalBypassFor":[{"type":"header","key":"Next-Action"},{"type":"header","key":"content-type","value":"multipart/form-data;.*"}],"initialRevalidateSeconds":false,"srcRoute":"/admin","dataRoute":"/admin.rsc"},"/privacy":{"experimentalBypassFor":[{"type":"header","key":"Next-Action"},{"type":"header","key":"content-type","value":"multipart/form-data;.*"}],"initialRevalidateSeconds":false,"srcRoute":"/privacy","dataRoute":"/privacy.rsc"}},"dynamicRoutes":{},"notFoundRoutes":[],"preview":{"previewModeId":"79dc23227b5fa9b1bc9990fb37492fab","previewModeSigningKey":"77a97b2a37a769d5e0add63d4d1488afb577c962dce582bbe18ccae4bf0d6f8e","previewModeEncryptionKey":"63da767cd3528fe277dd46963d3814f8af1f87ad6c3abd557bd385860ddc970e"}};
           }
         
 
@@ -24568,8 +24568,8 @@ var require_load_manifest = __commonJS({
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/5vCqVzFWmxHrfehE7OEtt/_buildManifest.js",
-    "static/5vCqVzFWmxHrfehE7OEtt/_ssgManifest.js"
+    "static/cy-tPkDLyY_5nI1NITUUs/_buildManifest.js",
+    "static/cy-tPkDLyY_5nI1NITUUs/_ssgManifest.js"
   ],
   "rootMainFiles": [
     "static/chunks/webpack-879f858537244e02.js",
@@ -24597,7 +24597,7 @@ var require_load_manifest = __commonJS({
         
 
           if (path.endsWith(".next/app-path-routes-manifest.json")) {
-            return {"/_not-found/page":"/_not-found","/bid/page":"/bid","/admin/page":"/admin","/page":"/","/privacy/page":"/privacy","/terms/page":"/terms"};
+            return {"/_not-found/page":"/_not-found","/admin/page":"/admin","/bid/page":"/bid","/page":"/","/privacy/page":"/privacy","/terms/page":"/terms"};
           }
         
 
@@ -24619,13 +24619,6 @@ var require_load_manifest = __commonJS({
       "static/css/11fa7f1326ee5515.css",
       "static/chunks/app/layout-e45a07dc6cee272b.js"
     ],
-    "/bid/page": [
-      "static/chunks/webpack-879f858537244e02.js",
-      "static/chunks/fd9d1056-2821b0f0cabcd8bd.js",
-      "static/chunks/23-0627c91053ca9399.js",
-      "static/chunks/main-app-48e446e18c2cbdab.js",
-      "static/chunks/app/bid/page-d895be874353eefc.js"
-    ],
     "/admin/page": [
       "static/chunks/webpack-879f858537244e02.js",
       "static/chunks/fd9d1056-2821b0f0cabcd8bd.js",
@@ -24633,26 +24626,33 @@ var require_load_manifest = __commonJS({
       "static/chunks/main-app-48e446e18c2cbdab.js",
       "static/chunks/app/admin/page-692e772eb42a6739.js"
     ],
+    "/bid/page": [
+      "static/chunks/webpack-879f858537244e02.js",
+      "static/chunks/fd9d1056-2821b0f0cabcd8bd.js",
+      "static/chunks/23-0627c91053ca9399.js",
+      "static/chunks/main-app-48e446e18c2cbdab.js",
+      "static/chunks/app/bid/page-d895be874353eefc.js"
+    ],
     "/page": [
       "static/chunks/webpack-879f858537244e02.js",
       "static/chunks/fd9d1056-2821b0f0cabcd8bd.js",
       "static/chunks/23-0627c91053ca9399.js",
       "static/chunks/main-app-48e446e18c2cbdab.js",
-      "static/chunks/app/page-814ed15f5ed16155.js"
+      "static/chunks/app/page-bdfcf02473e563e6.js"
     ],
     "/privacy/page": [
       "static/chunks/webpack-879f858537244e02.js",
       "static/chunks/fd9d1056-2821b0f0cabcd8bd.js",
       "static/chunks/23-0627c91053ca9399.js",
       "static/chunks/main-app-48e446e18c2cbdab.js",
-      "static/chunks/app/privacy/page-dfea2fc4cf846bf6.js"
+      "static/chunks/app/privacy/page-8d755a62ae2088a8.js"
     ],
     "/terms/page": [
       "static/chunks/webpack-879f858537244e02.js",
       "static/chunks/fd9d1056-2821b0f0cabcd8bd.js",
       "static/chunks/23-0627c91053ca9399.js",
       "static/chunks/main-app-48e446e18c2cbdab.js",
-      "static/chunks/app/terms/page-6e3234b75a2fa462.js"
+      "static/chunks/app/terms/page-eac922b553bdc033.js"
     ]
   }
 };
@@ -24660,7 +24660,7 @@ var require_load_manifest = __commonJS({
         
 
           if (path.endsWith(".next/server/server-reference-manifest.json")) {
-            return {"node":{},"edge":{},"encryptionKey":"zUqi4gFKu4BIj7NXlw/VjhJS1Uy5XHyzhKl6zjXwWug="};
+            return {"node":{},"edge":{},"encryptionKey":"eXgEclzO+OiLRmX7jxxyTnkbdGBx3LaFCJ+lw+9YVss="};
           }
         
 
@@ -24692,8 +24692,8 @@ var require_load_manifest = __commonJS({
           if (path.endsWith(".next/server/app-paths-manifest.json")) {
             return {
   "/_not-found/page": "app/_not-found/page.js",
-  "/bid/page": "app/bid/page.js",
   "/admin/page": "app/admin/page.js",
+  "/bid/page": "app/bid/page.js",
   "/page": "app/page.js",
   "/privacy/page": "app/privacy/page.js",
   "/terms/page": "app/terms/page.js"
@@ -24893,7 +24893,7 @@ var require_require = __commonJS({
       const pagePath = getPagePath(page, distDir, void 0, isAppPath);
     
           if (pagePath.endsWith(".next/server/pages/404.html")) {
-            return "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/11fa7f1326ee5515.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-879f858537244e02.js\"/><script src=\"/_next/static/chunks/fd9d1056-2821b0f0cabcd8bd.js\" async=\"\"></script><script src=\"/_next/static/chunks/23-0627c91053ca9399.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-48e446e18c2cbdab.js\" async=\"\"></script><title>404: This page could not be found.</title><title>FriscoBiryani.com | Weekend Food Drop Marketplace</title><meta name=\"description\" content=\"Community-driven reverse-auction weekend food drop platform connecting Frisco food purists with licensed commercial kitchens.\"/><script src=\"/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js\" noModule=\"\"></script></head><body class=\"bg-slate-950 text-slate-100 min-h-screen\"><div style=\"font-family:system-ui,&quot;Segoe UI&quot;,Roboto,Helvetica,Arial,sans-serif,&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;;height:100vh;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center\"><div><style>body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}</style><h1 class=\"next-error-h1\" style=\"display:inline-block;margin:0 20px 0 0;padding:0 23px 0 0;font-size:24px;font-weight:500;vertical-align:top;line-height:49px\">404</h1><div style=\"display:inline-block\"><h2 style=\"font-size:14px;font-weight:400;line-height:49px;margin:0\">This page could not be found.</h2></div></div></div><script src=\"/_next/static/chunks/webpack-879f858537244e02.js\" async=\"\"></script><script>(self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null])</script><script>self.__next_f.push([1,\"1:HL[\\\"/_next/static/css/11fa7f1326ee5515.css\\\",\\\"style\\\"]\\n\"])</script><script>self.__next_f.push([1,\"2:I[5751,[],\\\"\\\"]\\n4:I[9275,[],\\\"\\\"]\\n5:I[1343,[],\\\"\\\"]\\nb:I[6130,[],\\\"\\\"]\\n6:{\\\"fontFamily\\\":\\\"system-ui,\\\\\\\"Segoe UI\\\\\\\",Roboto,Helvetica,Arial,sans-serif,\\\\\\\"Apple Color Emoji\\\\\\\",\\\\\\\"Segoe UI Emoji\\\\\\\"\\\",\\\"height\\\":\\\"100vh\\\",\\\"textAlign\\\":\\\"center\\\",\\\"display\\\":\\\"flex\\\",\\\"flexDirection\\\":\\\"column\\\",\\\"alignItems\\\":\\\"center\\\",\\\"justifyContent\\\":\\\"center\\\"}\\n7:{\\\"display\\\":\\\"inline-block\\\",\\\"margin\\\":\\\"0 20px 0 0\\\",\\\"padding\\\":\\\"0 23px 0 0\\\",\\\"fontSize\\\":24,\\\"fontWeight\\\":500,\\\"verticalAlign\\\":\\\"top\\\",\\\"lineHeight\\\":\\\"49px\\\"}\\n8:{\\\"display\\\":\\\"inline-block\\\"}\\n9:{\\\"fontSize\\\":14,\\\"fontWeight\\\":400,\\\"lineHeight\\\":\\\"49px\\\",\\\"margin\\\":0}\\nc:[]\\n\"])</script><script>self.__next_f.push([1,\"0:[[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/11fa7f1326ee5515.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\"}]],[\\\"$\\\",\\\"$L2\\\",null,{\\\"buildId\\\":\\\"5vCqVzFWmxHrfehE7OEtt\\\",\\\"assetPrefix\\\":\\\"\\\",\\\"initialCanonicalUrl\\\":\\\"/_not-found\\\",\\\"initialTree\\\":[\\\"\\\",{\\\"children\\\":[\\\"/_not-found\\\",{\\\"children\\\":[\\\"__PAGE__\\\",{}]}]},\\\"$undefined\\\",\\\"$undefined\\\",true],\\\"initialSeedData\\\":[\\\"\\\",{\\\"children\\\":[\\\"/_not-found\\\",{\\\"children\\\":[\\\"__PAGE__\\\",{},[[\\\"$L3\\\",[[\\\"$\\\",\\\"title\\\",null,{\\\"children\\\":\\\"404: This page could not be found.\\\"}],[\\\"$\\\",\\\"div\\\",null,{\\\"style\\\":{\\\"fontFamily\\\":\\\"system-ui,\\\\\\\"Segoe UI\\\\\\\",Roboto,Helvetica,Arial,sans-serif,\\\\\\\"Apple Color Emoji\\\\\\\",\\\\\\\"Segoe UI Emoji\\\\\\\"\\\",\\\"height\\\":\\\"100vh\\\",\\\"textAlign\\\":\\\"center\\\",\\\"display\\\":\\\"flex\\\",\\\"flexDirection\\\":\\\"column\\\",\\\"alignItems\\\":\\\"center\\\",\\\"justifyContent\\\":\\\"center\\\"},\\\"children\\\":[\\\"$\\\",\\\"div\\\",null,{\\\"children\\\":[[\\\"$\\\",\\\"style\\\",null,{\\\"dangerouslySetInnerHTML\\\":{\\\"__html\\\":\\\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\\\"}}],[\\\"$\\\",\\\"h1\\\",null,{\\\"className\\\":\\\"next-error-h1\\\",\\\"style\\\":{\\\"display\\\":\\\"inline-block\\\",\\\"margin\\\":\\\"0 20px 0 0\\\",\\\"padding\\\":\\\"0 23px 0 0\\\",\\\"fontSize\\\":24,\\\"fontWeight\\\":500,\\\"verticalAlign\\\":\\\"top\\\",\\\"lineHeight\\\":\\\"49px\\\"},\\\"children\\\":\\\"404\\\"}],[\\\"$\\\",\\\"div\\\",null,{\\\"style\\\":{\\\"display\\\":\\\"inline-block\\\"},\\\"children\\\":[\\\"$\\\",\\\"h2\\\",null,{\\\"style\\\":{\\\"fontSize\\\":14,\\\"fontWeight\\\":400,\\\"lineHeight\\\":\\\"49px\\\",\\\"margin\\\":0},\\\"children\\\":\\\"This page could not be found.\\\"}]}]]}]}]]],null],null]},[\\\"$\\\",\\\"$L4\\\",null,{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"segmentPath\\\":[\\\"children\\\",\\\"/_not-found\\\",\\\"children\\\"],\\\"error\\\":\\\"$undefined\\\",\\\"errorStyles\\\":\\\"$undefined\\\",\\\"errorScripts\\\":\\\"$undefined\\\",\\\"template\\\":[\\\"$\\\",\\\"$L5\\\",null,{}],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":\\\"$undefined\\\",\\\"notFoundStyles\\\":\\\"$undefined\\\",\\\"styles\\\":null}],null]},[[\\\"$\\\",\\\"html\\\",null,{\\\"lang\\\":\\\"en\\\",\\\"children\\\":[\\\"$\\\",\\\"body\\\",null,{\\\"className\\\":\\\"bg-slate-950 text-slate-100 min-h-screen\\\",\\\"children\\\":[\\\"$\\\",\\\"$L4\\\",null,{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"segmentPath\\\":[\\\"children\\\"],\\\"error\\\":\\\"$undefined\\\",\\\"errorStyles\\\":\\\"$undefined\\\",\\\"errorScripts\\\":\\\"$undefined\\\",\\\"template\\\":[\\\"$\\\",\\\"$L5\\\",null,{}],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":[[\\\"$\\\",\\\"title\\\",null,{\\\"children\\\":\\\"404: This page could not be found.\\\"}],[\\\"$\\\",\\\"div\\\",null,{\\\"style\\\":\\\"$6\\\",\\\"children\\\":[\\\"$\\\",\\\"div\\\",null,{\\\"children\\\":[[\\\"$\\\",\\\"style\\\",null,{\\\"dangerouslySetInnerHTML\\\":{\\\"__html\\\":\\\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\\\"}}],[\\\"$\\\",\\\"h1\\\",null,{\\\"className\\\":\\\"next-error-h1\\\",\\\"style\\\":\\\"$7\\\",\\\"children\\\":\\\"404\\\"}],[\\\"$\\\",\\\"div\\\",null,{\\\"style\\\":\\\"$8\\\",\\\"children\\\":[\\\"$\\\",\\\"h2\\\",null,{\\\"style\\\":\\\"$9\\\",\\\"children\\\":\\\"This page could not be found.\\\"}]}]]}]}]],\\\"notFoundStyles\\\":[],\\\"styles\\\":null}]}]}],null],null],\\\"couldBeIntercepted\\\":false,\\\"initialHead\\\":[false,\\\"$La\\\"],\\\"globalErrorComponent\\\":\\\"$b\\\",\\\"missingSlots\\\":\\\"$Wc\\\"}]]\\n\"])</script><script>self.__next_f.push([1,\"a:[[\\\"$\\\",\\\"meta\\\",\\\"0\\\",{\\\"name\\\":\\\"viewport\\\",\\\"content\\\":\\\"width=device-width, initial-scale=1\\\"}],[\\\"$\\\",\\\"meta\\\",\\\"1\\\",{\\\"charSet\\\":\\\"utf-8\\\"}],[\\\"$\\\",\\\"title\\\",\\\"2\\\",{\\\"children\\\":\\\"FriscoBiryani.com | Weekend Food Drop Marketplace\\\"}],[\\\"$\\\",\\\"meta\\\",\\\"3\\\",{\\\"name\\\":\\\"description\\\",\\\"content\\\":\\\"Community-driven reverse-auction weekend food drop platform connecting Frisco food purists with licensed commercial kitchens.\\\"}]]\\n3:null\\n\"])</script></body></html>";
+            return "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/11fa7f1326ee5515.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-879f858537244e02.js\"/><script src=\"/_next/static/chunks/fd9d1056-2821b0f0cabcd8bd.js\" async=\"\"></script><script src=\"/_next/static/chunks/23-0627c91053ca9399.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-48e446e18c2cbdab.js\" async=\"\"></script><title>404: This page could not be found.</title><title>FriscoBiryani.com | Weekend Food Drop Marketplace</title><meta name=\"description\" content=\"Community-driven reverse-auction weekend food drop platform connecting Frisco food purists with licensed commercial kitchens.\"/><script src=\"/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js\" noModule=\"\"></script></head><body class=\"bg-slate-950 text-slate-100 min-h-screen\"><div style=\"font-family:system-ui,&quot;Segoe UI&quot;,Roboto,Helvetica,Arial,sans-serif,&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;;height:100vh;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center\"><div><style>body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}</style><h1 class=\"next-error-h1\" style=\"display:inline-block;margin:0 20px 0 0;padding:0 23px 0 0;font-size:24px;font-weight:500;vertical-align:top;line-height:49px\">404</h1><div style=\"display:inline-block\"><h2 style=\"font-size:14px;font-weight:400;line-height:49px;margin:0\">This page could not be found.</h2></div></div></div><script src=\"/_next/static/chunks/webpack-879f858537244e02.js\" async=\"\"></script><script>(self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null])</script><script>self.__next_f.push([1,\"1:HL[\\\"/_next/static/css/11fa7f1326ee5515.css\\\",\\\"style\\\"]\\n\"])</script><script>self.__next_f.push([1,\"2:I[5751,[],\\\"\\\"]\\n4:I[9275,[],\\\"\\\"]\\n5:I[1343,[],\\\"\\\"]\\nb:I[6130,[],\\\"\\\"]\\n6:{\\\"fontFamily\\\":\\\"system-ui,\\\\\\\"Segoe UI\\\\\\\",Roboto,Helvetica,Arial,sans-serif,\\\\\\\"Apple Color Emoji\\\\\\\",\\\\\\\"Segoe UI Emoji\\\\\\\"\\\",\\\"height\\\":\\\"100vh\\\",\\\"textAlign\\\":\\\"center\\\",\\\"display\\\":\\\"flex\\\",\\\"flexDirection\\\":\\\"column\\\",\\\"alignItems\\\":\\\"center\\\",\\\"justifyContent\\\":\\\"center\\\"}\\n7:{\\\"display\\\":\\\"inline-block\\\",\\\"margin\\\":\\\"0 20px 0 0\\\",\\\"padding\\\":\\\"0 23px 0 0\\\",\\\"fontSize\\\":24,\\\"fontWeight\\\":500,\\\"verticalAlign\\\":\\\"top\\\",\\\"lineHeight\\\":\\\"49px\\\"}\\n8:{\\\"display\\\":\\\"inline-block\\\"}\\n9:{\\\"fontSize\\\":14,\\\"fontWeight\\\":400,\\\"lineHeight\\\":\\\"49px\\\",\\\"margin\\\":0}\\nc:[]\\n\"])</script><script>self.__next_f.push([1,\"0:[[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/11fa7f1326ee5515.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\"}]],[\\\"$\\\",\\\"$L2\\\",null,{\\\"buildId\\\":\\\"cy-tPkDLyY_5nI1NITUUs\\\",\\\"assetPrefix\\\":\\\"\\\",\\\"initialCanonicalUrl\\\":\\\"/_not-found\\\",\\\"initialTree\\\":[\\\"\\\",{\\\"children\\\":[\\\"/_not-found\\\",{\\\"children\\\":[\\\"__PAGE__\\\",{}]}]},\\\"$undefined\\\",\\\"$undefined\\\",true],\\\"initialSeedData\\\":[\\\"\\\",{\\\"children\\\":[\\\"/_not-found\\\",{\\\"children\\\":[\\\"__PAGE__\\\",{},[[\\\"$L3\\\",[[\\\"$\\\",\\\"title\\\",null,{\\\"children\\\":\\\"404: This page could not be found.\\\"}],[\\\"$\\\",\\\"div\\\",null,{\\\"style\\\":{\\\"fontFamily\\\":\\\"system-ui,\\\\\\\"Segoe UI\\\\\\\",Roboto,Helvetica,Arial,sans-serif,\\\\\\\"Apple Color Emoji\\\\\\\",\\\\\\\"Segoe UI Emoji\\\\\\\"\\\",\\\"height\\\":\\\"100vh\\\",\\\"textAlign\\\":\\\"center\\\",\\\"display\\\":\\\"flex\\\",\\\"flexDirection\\\":\\\"column\\\",\\\"alignItems\\\":\\\"center\\\",\\\"justifyContent\\\":\\\"center\\\"},\\\"children\\\":[\\\"$\\\",\\\"div\\\",null,{\\\"children\\\":[[\\\"$\\\",\\\"style\\\",null,{\\\"dangerouslySetInnerHTML\\\":{\\\"__html\\\":\\\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\\\"}}],[\\\"$\\\",\\\"h1\\\",null,{\\\"className\\\":\\\"next-error-h1\\\",\\\"style\\\":{\\\"display\\\":\\\"inline-block\\\",\\\"margin\\\":\\\"0 20px 0 0\\\",\\\"padding\\\":\\\"0 23px 0 0\\\",\\\"fontSize\\\":24,\\\"fontWeight\\\":500,\\\"verticalAlign\\\":\\\"top\\\",\\\"lineHeight\\\":\\\"49px\\\"},\\\"children\\\":\\\"404\\\"}],[\\\"$\\\",\\\"div\\\",null,{\\\"style\\\":{\\\"display\\\":\\\"inline-block\\\"},\\\"children\\\":[\\\"$\\\",\\\"h2\\\",null,{\\\"style\\\":{\\\"fontSize\\\":14,\\\"fontWeight\\\":400,\\\"lineHeight\\\":\\\"49px\\\",\\\"margin\\\":0},\\\"children\\\":\\\"This page could not be found.\\\"}]}]]}]}]]],null],null]},[\\\"$\\\",\\\"$L4\\\",null,{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"segmentPath\\\":[\\\"children\\\",\\\"/_not-found\\\",\\\"children\\\"],\\\"error\\\":\\\"$undefined\\\",\\\"errorStyles\\\":\\\"$undefined\\\",\\\"errorScripts\\\":\\\"$undefined\\\",\\\"template\\\":[\\\"$\\\",\\\"$L5\\\",null,{}],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":\\\"$undefined\\\",\\\"notFoundStyles\\\":\\\"$undefined\\\",\\\"styles\\\":null}],null]},[[\\\"$\\\",\\\"html\\\",null,{\\\"lang\\\":\\\"en\\\",\\\"children\\\":[\\\"$\\\",\\\"body\\\",null,{\\\"className\\\":\\\"bg-slate-950 text-slate-100 min-h-screen\\\",\\\"children\\\":[\\\"$\\\",\\\"$L4\\\",null,{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"segmentPath\\\":[\\\"children\\\"],\\\"error\\\":\\\"$undefined\\\",\\\"errorStyles\\\":\\\"$undefined\\\",\\\"errorScripts\\\":\\\"$undefined\\\",\\\"template\\\":[\\\"$\\\",\\\"$L5\\\",null,{}],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":[[\\\"$\\\",\\\"title\\\",null,{\\\"children\\\":\\\"404: This page could not be found.\\\"}],[\\\"$\\\",\\\"div\\\",null,{\\\"style\\\":\\\"$6\\\",\\\"children\\\":[\\\"$\\\",\\\"div\\\",null,{\\\"children\\\":[[\\\"$\\\",\\\"style\\\",null,{\\\"dangerouslySetInnerHTML\\\":{\\\"__html\\\":\\\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\\\"}}],[\\\"$\\\",\\\"h1\\\",null,{\\\"className\\\":\\\"next-error-h1\\\",\\\"style\\\":\\\"$7\\\",\\\"children\\\":\\\"404\\\"}],[\\\"$\\\",\\\"div\\\",null,{\\\"style\\\":\\\"$8\\\",\\\"children\\\":[\\\"$\\\",\\\"h2\\\",null,{\\\"style\\\":\\\"$9\\\",\\\"children\\\":\\\"This page could not be found.\\\"}]}]]}]}]],\\\"notFoundStyles\\\":[],\\\"styles\\\":null}]}]}],null],null],\\\"couldBeIntercepted\\\":false,\\\"initialHead\\\":[false,\\\"$La\\\"],\\\"globalErrorComponent\\\":\\\"$b\\\",\\\"missingSlots\\\":\\\"$Wc\\\"}]]\\n\"])</script><script>self.__next_f.push([1,\"a:[[\\\"$\\\",\\\"meta\\\",\\\"0\\\",{\\\"name\\\":\\\"viewport\\\",\\\"content\\\":\\\"width=device-width, initial-scale=1\\\"}],[\\\"$\\\",\\\"meta\\\",\\\"1\\\",{\\\"charSet\\\":\\\"utf-8\\\"}],[\\\"$\\\",\\\"title\\\",\\\"2\\\",{\\\"children\\\":\\\"FriscoBiryani.com | Weekend Food Drop Marketplace\\\"}],[\\\"$\\\",\\\"meta\\\",\\\"3\\\",{\\\"name\\\":\\\"description\\\",\\\"content\\\":\\\"Community-driven reverse-auction weekend food drop platform connecting Frisco food purists with licensed commercial kitchens.\\\"}]]\\n3:null\\n\"])</script></body></html>";
           }
         
     
@@ -24917,13 +24917,13 @@ var require_require = __commonJS({
           }
         
 
-          if (pagePath.endsWith(".next/server/app/bid/page.js")) {
-            return require("/Users/svstech/projects/frisco-biryani/.worker-next/.next/standalone/.next/server/app/bid/page.js");
+          if (pagePath.endsWith(".next/server/app/admin/page.js")) {
+            return require("/Users/svstech/projects/frisco-biryani/.worker-next/.next/standalone/.next/server/app/admin/page.js");
           }
         
 
-          if (pagePath.endsWith(".next/server/app/admin/page.js")) {
-            return require("/Users/svstech/projects/frisco-biryani/.worker-next/.next/standalone/.next/server/app/admin/page.js");
+          if (pagePath.endsWith(".next/server/app/bid/page.js")) {
+            return require("/Users/svstech/projects/frisco-biryani/.worker-next/.next/standalone/.next/server/app/bid/page.js");
           }
         
 
@@ -32874,7 +32874,7 @@ CacheHandler = (await import('./cache-handler.mjs')).OpenNextCacheHandler;
         return !!(0, _require.getMaybePagePath)(pathname, this.distDir, (_this_nextConfig_i18n = this.nextConfig.i18n) == null ? void 0 : _this_nextConfig_i18n.locales, this.enabledDirectories.app);
       }
       getBuildId() {
-      return "5vCqVzFWmxHrfehE7OEtt";
+      return "cy-tPkDLyY_5nI1NITUUs";
     
         const buildIdFile = (0, _path.join)(this.distDir, _constants.BUILD_ID_FILE);
         try {
