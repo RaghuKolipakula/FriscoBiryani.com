@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import { Flame, ShieldCheck, Clock, MapPin, Sparkles, ChefHat, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -16,6 +17,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-G1QVV70QD0" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          
+            gtag('config', 'G-G1QVV70QD0');
+          `}
+        </Script>
+      </head>
       <body className="bg-slate-950 text-slate-100 min-h-screen flex flex-col selection:bg-amber-500 selection:text-slate-950">
         
         {/* Top Ticker Bar */}
