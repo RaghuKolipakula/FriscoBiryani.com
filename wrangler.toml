@@ -1,3 +1,8 @@
 name = "frisco-biryani"
-compatibility_date = "2024-05-02"
-pages_build_output_dir = ".worker-next"
+main = ".open-next/worker.js"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+binding = "ASSETS"
+directory = ".open-next/assets"
