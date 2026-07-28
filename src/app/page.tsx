@@ -121,6 +121,9 @@ export default function ViralQuizPage() {
   const [copied, setCopied] = useState(false);
 
   const [restaurantMatch, setRestaurantMatch] = useState<any>(null);
+  const [comparedCount, setComparedCount] = useState<number>(0);
+  const [comparedList, setComparedList] = useState<string[]>([]);
+  const [showCompared, setShowCompared] = useState(false);
 
   const currentQuestion = QUESTIONS[currentQuestionIndex];
 
@@ -162,6 +165,8 @@ export default function ViralQuizPage() {
       const json = await res.json();
       if (json.success) {
         setRestaurantMatch(json.data);
+        setComparedCount(json.comparedCount || 0);
+        setComparedList(json.comparedList || []);
       }
     } catch (e) {
       console.error("Failed to fetch restaurant match", e);
@@ -324,6 +329,28 @@ export default function ViralQuizPage() {
                         </span>
                         <span className="text-slate-500 text-xs font-medium">({restaurantMatch.reviewCount} reviews)</span>
                       </div>
+                      
+                      {comparedCount > 1 && (
+                        <div className="mb-4">
+                          <button 
+                            onClick={() => setShowCompared(!showCompared)}
+                            className="text-xs text-slate-400 hover:text-amber-400 transition-colors flex items-center gap-1"
+                          >
+                            <ChefHat className="w-3 h-3" />
+                            We analyzed {comparedCount} local spots for this match. {showCompared ? "Hide" : "See them"}
+                          </button>
+                          {showCompared && (
+                            <div className="mt-2 p-2 bg-slate-900 rounded-lg border border-slate-800 text-[10px] text-slate-500 flex flex-wrap gap-1.5">
+                              {comparedList.map((name, i) => (
+                                <span key={i} className="bg-slate-950 px-1.5 py-0.5 rounded">
+                                  {name}
+                                </span>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      )}
+
                       <p className="text-slate-400 text-sm italic border-l-2 border-slate-700 pl-4 py-1 mb-5 leading-relaxed">
                         "{restaurantMatch.reviewSnippet}"
                       </p>

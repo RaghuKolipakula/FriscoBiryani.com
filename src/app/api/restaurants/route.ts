@@ -68,9 +68,11 @@ export async function GET(request: Request) {
       });
     }
 
+    const comparedCount = data.places.length;
+    const comparedList = data.places.map((p: any) => p.displayName?.text).filter(Boolean);
+
     // 3. Find the highest-rated place among the returned results
     const sortedPlaces = data.places.sort((a: any, b: any) => {
-      // Sort by rating, then by number of reviews if tied
       if (b.rating === a.rating) {
         return (b.userRatingCount || 0) - (a.userRatingCount || 0);
       }
@@ -104,7 +106,9 @@ export async function GET(request: Request) {
 
     return NextResponse.json({
       success: true,
-      data: formattedMatch
+      data: formattedMatch,
+      comparedCount,
+      comparedList
     });
 
   } catch (error) {
