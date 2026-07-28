@@ -528,12 +528,33 @@ export default function HomePage() {
       </section>
 
       {/* SEO CONTENT SECTION */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-slate-900/40 rounded-3xl mb-12 border border-slate-800">
+      <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-slate-900/40 rounded-3xl mb-8 border border-slate-800">
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-amber-400">Why We Serve the Best Biryani in Frisco, TX</h2>
           <p className="text-slate-300 text-sm leading-relaxed">
             If you are searching for authentic <strong>Indian food in Frisco, TX</strong>, specifically a mouth-watering <strong>Hyderabadi Dum Biryani</strong>, you have found the right community. Our reverse-auction weekend food drops ensure that you get the highest quality, restaurant-grade <strong>Frisco biryani</strong> cooked by licensed commercial chefs. We specialize in slow-cooked mutton shank biryani, Vijayawada boneless chicken biryani, and vegetarian options like Avakaya Jackfruit biryani. By pooling community demand, we bring the best authentic biryani to Frisco at unbeatable prices. Join the ultimate <strong>weekend food drop</strong> and taste the difference.
           </p>
+        </div>
+      </section>
+
+      {/* SEO FAQ SECTION */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-slate-900/60 rounded-3xl mb-12 border border-slate-700">
+        <div className="max-w-4xl mx-auto space-y-8">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white text-center">Frisco Biryani Frequently Asked Questions</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-lg font-bold text-amber-400">Where can I find the best biryani in Frisco, TX?</h3>
+              <p className="text-slate-300 text-sm mt-2">FriscoBiryani.com is the premier destination for the best biryani in Frisco, TX. We connect local biryani purists directly with licensed commercial kitchens for authentic, reverse-auction weekend food drops.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-amber-400">What makes Hyderabadi Dum Biryani authentic?</h3>
+              <p className="text-slate-300 text-sm mt-2">Authentic Hyderabadi Dum Biryani is slow-cooked in a sealed vessel (handi) to lock in the steam (dum). We use premium aged Long-Grain Basmati rice, tender meat, and pure saffron for an unparalleled flavor profile right here in Frisco.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-amber-400">Do you offer vegetarian biryani options in Frisco?</h3>
+              <p className="text-slate-300 text-sm mt-2">Yes! We offer highly-rated vegetarian options like our Avakaya Kathal (Raw Jackfruit) Biryani, providing the rich texture and spicy kick of traditional biryani without the meat.</p>
+            </div>
+          </div>
         </div>
       </section>
 
