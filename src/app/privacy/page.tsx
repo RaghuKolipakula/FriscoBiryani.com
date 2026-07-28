@@ -7,7 +7,7 @@ export default function PrivacyPage() {
     <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
       
       <Link href="/" className="inline-flex items-center gap-1.5 text-xs text-amber-400 hover:underline font-semibold">
-        <ArrowLeft className="w-4 h-4" /> Back to Frisco Drops
+        <ArrowLeft className="w-4 h-4" /> Back to Quiz
       </Link>
 
       <div className="border-b border-slate-800 pb-6">
@@ -15,7 +15,7 @@ export default function PrivacyPage() {
           <ShieldCheck className="w-4 h-4" /> PRIVACY & DATA PROTECTION
         </div>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-white">Privacy Policy</h1>
-        <p className="text-xs text-slate-500 mt-2">Effective Date: July 24, 2026 | FriscoBiryani.com Marketplace</p>
+        <p className="text-xs text-slate-500 mt-2">Effective Date: July 28, 2026 | FriscoBiryani.com Discovery Tool</p>
       </div>
 
       <div className="glass-card rounded-2xl p-8 border border-slate-800 space-y-6 text-sm text-slate-300 leading-relaxed">
@@ -25,13 +25,11 @@ export default function PrivacyPage() {
             <Lock className="w-4 h-4 text-amber-400" /> 1. Information We Collect
           </h2>
           <p>
-            When you participate in our reverse-auction weekend food drops on FriscoBiryani.com, we collect limited personal information strictly necessary to facilitate batch pre-orders and pickup station hand-offs:
+            When you participate in our interactive quiz on FriscoBiryani.com, we collect limited, non-personally identifiable information strictly necessary to provide restaurant recommendations:
           </p>
           <ul className="list-disc list-inside space-y-1.5 text-xs text-slate-400 pl-2">
-            <li><strong>Contact Details:</strong> Name, phone number, and email address for SMS/email drop pickup alerts.</li>
-            <li><strong>Pre-Order Preferences:</strong> Selected biryani variety, portion quantities, spice preference, and chosen Frisco pickup station.</li>
-            <li><strong>Payment Tokenization:</strong> Financial credentials are encrypted and processed securely by Stripe/PCI-DSS compliant gateways. We never store raw credit card numbers.</li>
-            <li><strong>Commercial Kitchen Partner Data:</strong> Business entity name, Texas DSHS commercial food establishment license details, and bidding parameters.</li>
+            <li><strong>Quiz Responses:</strong> Your selected answers are processed locally to determine your biryani archetype.</li>
+            <li><strong>Analytics:</strong> General web traffic analytics to help us understand which local restaurants are most recommended.</li>
           </ul>
         </section>
 
@@ -40,12 +38,11 @@ export default function PrivacyPage() {
             <Eye className="w-4 h-4 text-orange-400" /> 2. How We Use Your Data
           </h2>
           <p>
-            Your information is used solely to power the reverse-auction batch aggregation process:
+            Your information is used solely to power the local discovery engine:
           </p>
           <ul className="list-disc list-inside space-y-1.5 text-xs text-slate-400 pl-2">
-            <li>Calculating live batch thresholds to unlock cheaper unit pricing tiers for all participants.</li>
-            <li>Routing portion counts to winning DSHS licensed commercial kitchens.</li>
-            <li>Sending pickup station arrival status and thermal hand-off verification codes via SMS/Email.</li>
+            <li>Calculating your specific biryani "vibe".</li>
+            <li>Matching you with the highest-rated local restaurant that fits your profile.</li>
           </ul>
         </section>
 
@@ -57,15 +54,15 @@ export default function PrivacyPage() {
             We respect your privacy:
           </p>
           <ul className="list-disc list-inside space-y-1.5 text-xs text-slate-400 pl-2">
-            <li>We <strong>NEVER</strong> sell or rent your personal information to third-party advertisers.</li>
-            <li>Winning kitchen partners only receive aggregated batch portion counts and anonymized dietary preferences (no individual customer names or phone numbers are exposed to kitchens).</li>
+            <li>We <strong>NEVER</strong> sell or rent any information to third-party advertisers.</li>
+            <li>We do not store your quiz results permanently on our servers.</li>
           </ul>
         </section>
 
         <section className="space-y-3">
           <h2 className="text-lg font-bold text-white">4. Contact & Inquiries</h2>
           <p className="text-xs text-slate-400">
-            If you have questions regarding our privacy practices or wish to request data removal, please contact our compliance desk at <strong>support@friscobiryani.com</strong>.
+            If you have questions regarding our privacy practices, please contact our compliance desk at <strong>support@friscobiryani.com</strong>.
           </p>
         </section>
 
