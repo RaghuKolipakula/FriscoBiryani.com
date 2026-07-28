@@ -124,6 +124,7 @@ export default function ViralQuizPage() {
   const [comparedCount, setComparedCount] = useState<number>(0);
   const [comparedList, setComparedList] = useState<string[]>([]);
   const [showCompared, setShowCompared] = useState(false);
+  const [flippingName, setFlippingName] = useState<string>("Scanning local spots...");
 
   const currentQuestion = QUESTIONS[currentQuestionIndex];
 
@@ -166,13 +167,29 @@ export default function ViralQuizPage() {
       if (json.success) {
         setRestaurantMatch(json.data);
         setComparedCount(json.comparedCount || 0);
-        setComparedList(json.comparedList || []);
+        
+        const list = json.comparedList || [];
+        setComparedList(list);
+
+        if (list.length > 0) {
+           let i = 0;
+           const interval = setInterval(() => {
+              setFlippingName(list[i % list.length]);
+              i++;
+           }, 150); // Flip every 150ms
+
+           setTimeout(() => {
+              clearInterval(interval);
+              setStep("result");
+           }, 2500); // Wait 2.5s before showing result
+           return;
+        }
       }
     } catch (e) {
       console.error("Failed to fetch restaurant match", e);
     }
 
-    // Simulate Dramatic Loading
+    // Simulate Dramatic Loading (Fallback if list is empty or API fails)
     setTimeout(() => {
       setStep("result");
     }, 2500);
@@ -289,6 +306,13 @@ export default function ViralQuizPage() {
             </div>
             <h2 className="text-2xl font-bold text-white animate-pulse">Calculating your Biryani type...</h2>
             <p className="text-slate-400 text-sm">Analyzing spice tolerance and rice preferences.</p>
+            
+            <div className="mt-8 p-4 bg-slate-900 rounded-xl border border-slate-800 shadow-inner overflow-hidden max-w-xs mx-auto">
+              <span className="text-[10px] text-amber-500 font-bold uppercase tracking-widest block mb-2">Finding your match</span>
+              <p className="text-white font-mono text-sm truncate animate-pulse">
+                {flippingName}
+              </p>
+            </div>
           </div>
         )}
 
