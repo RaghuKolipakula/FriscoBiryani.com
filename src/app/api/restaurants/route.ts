@@ -11,7 +11,18 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Archetype parameter is required" }, { status: 400 });
   }
 
-  const apiKey = process.env.GOOGLE_PLACES_API_KEY;
+  let apiKey = process.env.GOOGLE_PLACES_API_KEY;
+  
+  try {
+    // In Cloudflare Pages via OpenNext, env variables are often exposed via getRequestContext
+    const { getRequestContext } = require("@opennextjs/cloudflare");
+    const ctx = getRequestContext();
+    if (ctx?.env?.GOOGLE_PLACES_API_KEY) {
+      apiKey = ctx.env.GOOGLE_PLACES_API_KEY;
+    }
+  } catch (e) {
+    // Safe to ignore: running locally or not in a Cloudflare Worker context
+  }
   
   const FAKE_FALLBACK = {
     success: true,
@@ -74,8 +85,9 @@ export async function GET(request: Request) {
     });
 
     if (!response.ok) {
-      console.error("Google Places API Error:", await response.text());
-      throw new Error(`Google API responded with status: ${response.status}`);
+      const errorText = await response.text();
+      console.error("Google Places API Error:", errorText);
+      throw new Error(`Google API responded with status: ${response.status}. Body: ${errorText}`);
     }
 
     const data = await response.json();
@@ -131,6 +143,9 @@ export async function GET(request: Request) {
   } catch (error) {
     console.error("Failed to fetch from Google Places:", error);
     // Fallback on total failure
-    return NextResponse.json(FAKE_FALLBACK);
+    return NextResponse.json({ 
+      ...FAKE_FALLBACK, 
+      debugReason: error instanceof Error ? error.message : "Unknown error" 
+    });
   }
 }
