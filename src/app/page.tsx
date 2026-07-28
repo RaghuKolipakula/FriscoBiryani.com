@@ -193,9 +193,9 @@ export default function HomePage() {
 
             {/* Main Heading */}
             <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-none">
-              Weekend <span className="gradient-text">Dum Biryani</span> Drop.
+              The Best <span className="gradient-text">Frisco Biryani</span>
               <span className="block text-2xl sm:text-4xl text-slate-300 font-semibold mt-3">
-                More Orders = Lower Price for Everyone!
+                Authentic Hyderabadi Dum Biryani Weekend Drop
               </span>
             </h1>
 
@@ -298,7 +298,7 @@ export default function HomePage() {
       {/* HOW REVERSE AUCTION WORKS */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-white">How Frisco Reverse Auction Food Drops Work</h2>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white">How Our Frisco Biryani Reverse Auction Works</h2>
           <p className="text-slate-400 text-sm mt-2 max-w-xl mx-auto">
             Traditional restaurants mark up prices to cover overhead. We pool demand directly with licensed commercial kitchens.
           </p>
@@ -524,6 +524,16 @@ export default function HomePage() {
             </div>
 
           </div>
+        </div>
+      </section>
+
+      {/* SEO CONTENT SECTION */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-slate-900/40 rounded-3xl mb-12 border border-slate-800">
+        <div className="max-w-4xl mx-auto text-center space-y-6">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-amber-400">Why We Serve the Best Biryani in Frisco, TX</h2>
+          <p className="text-slate-300 text-sm leading-relaxed">
+            If you are searching for authentic <strong>Indian food in Frisco, TX</strong>, specifically a mouth-watering <strong>Hyderabadi Dum Biryani</strong>, you have found the right community. Our reverse-auction weekend food drops ensure that you get the highest quality, restaurant-grade <strong>Frisco biryani</strong> cooked by licensed commercial chefs. We specialize in slow-cooked mutton shank biryani, Vijayawada boneless chicken biryani, and vegetarian options like Avakaya Jackfruit biryani. By pooling community demand, we bring the best authentic biryani to Frisco at unbeatable prices. Join the ultimate <strong>weekend food drop</strong> and taste the difference.
+          </p>
         </div>
       </section>
 

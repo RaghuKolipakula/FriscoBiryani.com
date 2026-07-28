@@ -5,9 +5,22 @@ import Script from "next/script";
 import { Flame, ShieldCheck, Clock, MapPin, Sparkles, ChefHat, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "FriscoBiryani.com | Reverse-Auction Weekend Food Drop Marketplace",
-  description: "Community-driven reverse-auction weekend food drop platform connecting Frisco food purists with top-rated licensed commercial kitchens.",
-  keywords: ["Frisco Biryani", "Reverse Auction Food Drop", "Frisco TX Food", "Weekend Food Drop", "Hyderabadi Dum Biryani Frisco"],
+  title: "Best Frisco Biryani | Authentic Hyderabadi Dum Biryani in Frisco, TX",
+  description: "Looking for the best Frisco biryani? Order authentic, community-driven, reverse-auction Hyderabadi Dum Biryani from top-rated licensed commercial kitchens in Frisco, TX. Taste the ultimate weekend food drop experience.",
+  keywords: ["Frisco Biryani", "Best Biryani in Frisco", "Hyderabadi Dum Biryani Frisco", "Frisco TX Food", "Indian Food Frisco TX", "Authentic Biryani Frisco", "Weekend Food Drop", "Reverse Auction Food Drop"],
+  openGraph: {
+    title: "Best Frisco Biryani | Authentic Hyderabadi Dum Biryani",
+    description: "Experience the best authentic Hyderabadi Dum Biryani in Frisco, TX. Join our exclusive weekend food drop.",
+    url: 'https://friscobiryani.com',
+    siteName: 'FriscoBiryani.com',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Best Frisco Biryani | Authentic Hyderabadi Dum Biryani",
+    description: "Experience the best authentic Hyderabadi Dum Biryani in Frisco, TX.",
+  }
 };
 
 export default function RootLayout({
@@ -28,6 +41,35 @@ export default function RootLayout({
             gtag('config', 'G-G1QVV70QD0');
           `}
         </Script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Restaurant",
+              "name": "Frisco Biryani",
+              "image": "https://friscobiryani.com/logo.png",
+              "url": "https://friscobiryani.com",
+              "telephone": "+14690000000",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Main St",
+                "addressLocality": "Frisco",
+                "addressRegion": "TX",
+                "postalCode": "75034",
+                "addressCountry": "US"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 33.1507,
+                "longitude": -96.8236
+              },
+              "servesCuisine": "Indian, Biryani",
+              "priceRange": "$$",
+              "description": "The best authentic Hyderabadi Dum Biryani in Frisco, TX."
+            })
+          }}
+        />
       </head>
       <body className="bg-slate-950 text-slate-100 min-h-screen flex flex-col selection:bg-amber-500 selection:text-slate-950">
         
