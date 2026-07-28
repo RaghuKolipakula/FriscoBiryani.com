@@ -120,6 +120,8 @@ export default function ViralQuizPage() {
   const [finalResult, setFinalResult] = useState<Result | null>(null);
   const [copied, setCopied] = useState(false);
 
+  const [restaurantMatch, setRestaurantMatch] = useState<any>(null);
+
   const currentQuestion = QUESTIONS[currentQuestionIndex];
 
   const handleAnswer = (points: Partial<Record<ArchetypeId, number>>) => {
@@ -138,7 +140,7 @@ export default function ViralQuizPage() {
     }
   };
 
-  const calculateResult = (finalScores: Record<ArchetypeId, number>) => {
+  const calculateResult = async (finalScores: Record<ArchetypeId, number>) => {
     setStep("loading");
     
     // Find highest score
@@ -153,6 +155,17 @@ export default function ViralQuizPage() {
     });
 
     setFinalResult(RESULTS[topArchetype]);
+
+    // Fetch local restaurant match from our background module API
+    try {
+      const res = await fetch(`/api/restaurants?archetype=${topArchetype}`);
+      const json = await res.json();
+      if (json.success) {
+        setRestaurantMatch(json.data);
+      }
+    } catch (e) {
+      console.error("Failed to fetch restaurant match", e);
+    }
 
     // Simulate Dramatic Loading
     setTimeout(() => {
@@ -296,9 +309,37 @@ export default function ViralQuizPage() {
                   {finalResult.description}
                 </p>
                 
-                <div className="bg-slate-950 p-4 rounded-2xl border border-slate-800">
-                  <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider block mb-1">Your Best Match Order</span>
-                  <span className="text-emerald-400 font-bold">{finalResult.dish}</span>
+                <div className="bg-slate-950 p-5 rounded-2xl border border-slate-800 text-left mt-4 relative overflow-hidden group">
+                  <div className="absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-20 transition-opacity text-4xl">
+                    📍
+                  </div>
+                  <span className="text-[10px] text-amber-500 uppercase font-bold tracking-wider block mb-3">Local Vibe Match</span>
+                  
+                  {restaurantMatch ? (
+                    <>
+                      <h4 className="text-white font-bold text-xl mb-2">{restaurantMatch.name}</h4>
+                      <div className="flex items-center gap-2 mb-4">
+                        <span className="bg-amber-500 text-slate-950 text-xs font-bold px-2 py-0.5 rounded flex items-center gap-1">
+                          ★ {restaurantMatch.rating}
+                        </span>
+                        <span className="text-slate-500 text-xs font-medium">({restaurantMatch.reviewCount} reviews)</span>
+                      </div>
+                      <p className="text-slate-400 text-sm italic border-l-2 border-slate-700 pl-4 py-1 mb-5 leading-relaxed">
+                        "{restaurantMatch.reviewSnippet}"
+                      </p>
+                      
+                      <a 
+                        href={restaurantMatch.externalUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-sm font-bold transition-all active:scale-[0.98]"
+                      >
+                        View on Google Maps <ArrowRight className="w-4 h-4" />
+                      </a>
+                    </>
+                  ) : (
+                    <span className="text-emerald-400 font-bold block">{finalResult.dish}</span>
+                  )}
                 </div>
               </div>
             </div>
@@ -310,17 +351,10 @@ export default function ViralQuizPage() {
                 className="w-full py-4 rounded-2xl bg-white text-slate-950 font-black text-lg shadow-xl hover:bg-slate-200 transition-all active:scale-[0.98] flex items-center justify-center gap-2"
               >
                 {copied ? <CheckCircle2 className="w-5 h-5" /> : <Share2 className="w-5 h-5" />}
-                {copied ? "Link Copied!" : "Share Result"}
+                {copied ? "Link Copied!" : "Share Quiz Result"}
               </button>
-
-              <Link 
-                href="/bid"
-                className="w-full py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-600 text-slate-950 font-black text-lg shadow-xl hover:opacity-90 transition-all active:scale-[0.98] flex items-center justify-center gap-2 block text-center"
-              >
-                Order Your Match Now <ArrowRight className="w-5 h-5" />
-              </Link>
               
-              <div className="text-center pt-2">
+              <div className="text-center pt-4">
                 <button 
                   onClick={resetQuiz}
                   className="text-slate-500 hover:text-white text-sm font-semibold transition-colors flex items-center justify-center gap-1.5 mx-auto"
