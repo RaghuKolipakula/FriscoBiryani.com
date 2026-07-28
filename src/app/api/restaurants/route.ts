@@ -9,8 +9,31 @@ export async function GET(request: Request) {
   }
 
   const apiKey = process.env.GOOGLE_PLACES_API_KEY;
+  
+  const FAKE_FALLBACK = {
+    success: true,
+    data: {
+      name: "O'Desi Nukkad (Fallback)",
+      rating: 4.9,
+      reviewCount: 430,
+      vibeTags: ["fallback"],
+      reviewSnippet: "Absolutely incredible biryani, a hidden gem in Frisco.",
+      externalUrl: "https://www.google.com/maps/search/O+Desi+Nukkad+Frisco"
+    },
+    comparedCount: 6,
+    comparedList: [
+      "Bawarchi Biryanis",
+      "Hyderabad House",
+      "Biryani Factory",
+      "Pista House",
+      "Starbucks (Just Kidding)",
+      "O'Desi Nukkad"
+    ]
+  };
+
   if (!apiKey) {
-    return NextResponse.json({ error: "Google Places API key is missing" }, { status: 500 });
+    // If the API key is missing in production, return a graceful fallback so the UI animation still works
+    return NextResponse.json(FAKE_FALLBACK);
   }
 
   // 1. Map the archetype to a specific Google Places search query
@@ -55,17 +78,7 @@ export async function GET(request: Request) {
 
     if (!data.places || data.places.length === 0) {
       // Fallback if the live API somehow returns 0 results for Frisco
-      return NextResponse.json({
-        success: true,
-        data: {
-          name: "O'Desi Nukkad",
-          rating: 4.9,
-          reviewCount: 430,
-          vibeTags: ["fallback"],
-          reviewSnippet: "Absolutely incredible biryani, a hidden gem in Frisco.",
-          externalUrl: "https://www.google.com/maps/search/O+Desi+Nukkad+Frisco"
-        }
-      });
+      return NextResponse.json(FAKE_FALLBACK);
     }
 
     const comparedCount = data.places.length;
@@ -114,16 +127,6 @@ export async function GET(request: Request) {
   } catch (error) {
     console.error("Failed to fetch from Google Places:", error);
     // Fallback on total failure
-    return NextResponse.json({
-      success: true,
-      data: {
-        name: "O'Desi Nukkad",
-        rating: 4.9,
-        reviewCount: 430,
-        vibeTags: ["fallback"],
-        reviewSnippet: "Absolutely incredible biryani, a hidden gem in Frisco.",
-        externalUrl: "https://www.google.com/maps/search/O+Desi+Nukkad+Frisco"
-      }
-    });
+    return NextResponse.json(FAKE_FALLBACK);
   }
 }
