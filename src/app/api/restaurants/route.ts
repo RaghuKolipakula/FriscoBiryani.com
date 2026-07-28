@@ -1,56 +1,5 @@
 import { NextResponse } from "next/server";
 
-// This simulates a background cache or database storing real-time 
-// aggregated ratings from local restaurants (e.g., from Google Places/Yelp APIs).
-const RESTAURANT_CACHE = [
-  {
-    id: "r1",
-    name: "Bawarchi Biryani Point - Frisco",
-    rating: 4.6,
-    reviewCount: 1240,
-    vibeTags: ["heat-seeker", "spicy", "authentic", "fast"],
-    reviewSnippet: "The spice levels here are no joke! True authentic heat.",
-    externalUrl: "https://www.google.com/maps/search/Bawarchi+Biryani+Point+Frisco"
-  },
-  {
-    id: "r2",
-    name: "Hyderabad House",
-    rating: 4.7,
-    reviewCount: 985,
-    vibeTags: ["traditionalist", "dum", "basmati", "classic"],
-    reviewSnippet: "The dum cooking process is respected here. Perfectly separated rice.",
-    externalUrl: "https://www.google.com/maps/search/Hyderabad+House+Frisco"
-  },
-  {
-    id: "r3",
-    name: "Sri Mings",
-    rating: 4.8,
-    reviewCount: 512,
-    vibeTags: ["leader", "family", "portions", "seating"],
-    reviewSnippet: "Huge portions and great seating. We always come here with the whole family.",
-    externalUrl: "https://www.google.com/maps/search/Sri+Mings+Frisco"
-  },
-  {
-    id: "r4",
-    name: "Biryani Factory",
-    rating: 4.5,
-    reviewCount: 890,
-    vibeTags: ["loyalist", "comfort", "late-night", "portions"],
-    reviewSnippet: "My go-to spot when I need comfort food. I always take leftovers home.",
-    externalUrl: "https://www.google.com/maps/search/Biryani+Factory+Frisco"
-  },
-  {
-    // A fallback general high-rated spot
-    id: "r5",
-    name: "O'Desi Nukkad",
-    rating: 4.9,
-    reviewCount: 430,
-    vibeTags: ["general", "highly-rated"],
-    reviewSnippet: "Absolutely incredible biryani, a hidden gem in Frisco.",
-    externalUrl: "https://www.google.com/maps/search/O+Desi+Nukkad+Frisco"
-  }
-];
-
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const archetype = searchParams.get("archetype");
@@ -59,22 +8,118 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Archetype parameter is required" }, { status: 400 });
   }
 
-  // 1. Filter restaurants that match the vibe tag of the archetype
-  let matches = RESTAURANT_CACHE.filter(r => r.vibeTags.includes(archetype));
-
-  // 2. Fallback to the highest-rated general spot if no direct match is found
-  if (matches.length === 0) {
-    matches = [RESTAURANT_CACHE.find(r => r.id === "r5")!];
+  const apiKey = process.env.GOOGLE_PLACES_API_KEY;
+  if (!apiKey) {
+    return NextResponse.json({ error: "Google Places API key is missing" }, { status: 500 });
   }
 
-  // 3. Sort by highest rating
-  matches.sort((a, b) => b.rating - a.rating);
+  // 1. Map the archetype to a specific Google Places search query
+  let query = "biryani restaurant in Frisco, TX";
+  switch (archetype) {
+    case "heat-seeker":
+      query = "spicy biryani restaurant in Frisco, TX";
+      break;
+    case "traditionalist":
+      query = "authentic dum biryani in Frisco, TX";
+      break;
+    case "leader":
+      query = "family biryani restaurant in Frisco, TX";
+      break;
+    case "loyalist":
+      query = "best biryani in Frisco, TX";
+      break;
+  }
 
-  // Return the best match
-  const bestMatch = matches[0];
+  try {
+    // 2. Fetch live data from Google Places (New) API
+    const response = await fetch('https://places.googleapis.com/v1/places:searchText', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Goog-Api-Key': apiKey,
+        // Field Mask ensures we only request and pay for the specific data fields we need
+        'X-Goog-FieldMask': 'places.displayName,places.rating,places.userRatingCount,places.reviews,places.googleMapsUri'
+      },
+      body: JSON.stringify({
+        textQuery: query,
+        languageCode: 'en'
+      })
+    });
 
-  return NextResponse.json({
-    success: true,
-    data: bestMatch
-  });
+    if (!response.ok) {
+      console.error("Google Places API Error:", await response.text());
+      throw new Error(`Google API responded with status: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    if (!data.places || data.places.length === 0) {
+      // Fallback if the live API somehow returns 0 results for Frisco
+      return NextResponse.json({
+        success: true,
+        data: {
+          name: "O'Desi Nukkad",
+          rating: 4.9,
+          reviewCount: 430,
+          vibeTags: ["fallback"],
+          reviewSnippet: "Absolutely incredible biryani, a hidden gem in Frisco.",
+          externalUrl: "https://www.google.com/maps/search/O+Desi+Nukkad+Frisco"
+        }
+      });
+    }
+
+    // 3. Find the highest-rated place among the returned results
+    const sortedPlaces = data.places.sort((a: any, b: any) => {
+      // Sort by rating, then by number of reviews if tied
+      if (b.rating === a.rating) {
+        return (b.userRatingCount || 0) - (a.userRatingCount || 0);
+      }
+      return (b.rating || 0) - (a.rating || 0);
+    });
+
+    const bestPlace = sortedPlaces[0];
+    
+    // Extract a review snippet safely
+    let reviewSnippet = "A highly-rated local favorite!";
+    if (bestPlace.reviews && bestPlace.reviews.length > 0) {
+      const firstReview = bestPlace.reviews[0];
+      if (firstReview.text && firstReview.text.text) {
+        reviewSnippet = firstReview.text.text;
+        // Truncate if it's too long
+        if (reviewSnippet.length > 100) {
+          reviewSnippet = reviewSnippet.substring(0, 97) + "...";
+        }
+      }
+    }
+
+    // 4. Map the Google response back to our Frontend's expected schema
+    const formattedMatch = {
+      name: bestPlace.displayName?.text || "Local Biryani Spot",
+      rating: bestPlace.rating || 4.5,
+      reviewCount: bestPlace.userRatingCount || 0,
+      vibeTags: [archetype, "live-data"],
+      reviewSnippet: reviewSnippet,
+      externalUrl: bestPlace.googleMapsUri || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(bestPlace.displayName?.text + ' Frisco TX')}`
+    };
+
+    return NextResponse.json({
+      success: true,
+      data: formattedMatch
+    });
+
+  } catch (error) {
+    console.error("Failed to fetch from Google Places:", error);
+    // Fallback on total failure
+    return NextResponse.json({
+      success: true,
+      data: {
+        name: "O'Desi Nukkad",
+        rating: 4.9,
+        reviewCount: 430,
+        vibeTags: ["fallback"],
+        reviewSnippet: "Absolutely incredible biryani, a hidden gem in Frisco.",
+        externalUrl: "https://www.google.com/maps/search/O+Desi+Nukkad+Frisco"
+      }
+    });
+  }
 }
