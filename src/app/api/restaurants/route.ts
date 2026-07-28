@@ -12,7 +12,7 @@ export async function GET(request: Request) {
   }
 
   let apiKey = process.env.GOOGLE_PLACES_API_KEY;
-  let debugCtxError = "Removed require";
+  let debugCtxError = "Using native process.env";
   
   const FAKE_FALLBACK = {
     success: true,
