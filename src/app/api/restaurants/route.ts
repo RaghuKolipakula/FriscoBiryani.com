@@ -12,6 +12,7 @@ export async function GET(request: Request) {
   }
 
   let apiKey = process.env.GOOGLE_PLACES_API_KEY;
+  let debugCtxError = null;
   
   try {
     // In Cloudflare Pages via OpenNext, env variables are often exposed via getRequestContext
@@ -21,7 +22,7 @@ export async function GET(request: Request) {
       apiKey = ctx.env.GOOGLE_PLACES_API_KEY;
     }
   } catch (e) {
-    // Safe to ignore: running locally or not in a Cloudflare Worker context
+    debugCtxError = e instanceof Error ? e.message : String(e);
   }
   
   const FAKE_FALLBACK = {
@@ -47,7 +48,15 @@ export async function GET(request: Request) {
 
   if (!apiKey) {
     // If the API key is missing in production, return a graceful fallback so the UI animation still works
-    return NextResponse.json(FAKE_FALLBACK);
+    return NextResponse.json({
+      ...FAKE_FALLBACK,
+      debug: {
+        envHasKey: !!process.env.GOOGLE_PLACES_API_KEY,
+        nodeEnv: process.env.NODE_ENV,
+        keys: Object.keys(process.env).filter(k => k.includes('GOOGLE')),
+        ctxError: debugCtxError
+      }
+    });
   }
 
   // 1. Map the archetype to a specific Google Places search query
