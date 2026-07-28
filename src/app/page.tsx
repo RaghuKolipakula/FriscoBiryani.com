@@ -405,6 +405,31 @@ export default function ViralQuizPage() {
                 {copied ? "Link Copied!" : "Share Quiz Result"}
               </button>
               
+              {/* Automated Viral Loop Buttons */}
+              <div className="flex gap-2 w-full mt-2">
+                <a 
+                  href={`https://wa.me/?text=${encodeURIComponent((finalResult ? `I'm the ${finalResult.title} — what type of biryani eater are you? Find out at ` : '') + 'https://friscobiryani.com')}`}
+                  target="_blank" rel="noopener noreferrer"
+                  className="flex-1 py-3 rounded-xl bg-[#25D366] text-white text-sm font-bold flex items-center justify-center hover:bg-[#1DA851] transition-colors shadow-lg"
+                >
+                  WhatsApp
+                </a>
+                <a 
+                  href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(finalResult ? `I'm the ${finalResult.title} — what type of biryani eater are you? Find out at ` : '')}&url=https://friscobiryani.com`}
+                  target="_blank" rel="noopener noreferrer"
+                  className="flex-1 py-3 rounded-xl bg-[#1DA1F2] text-white text-sm font-bold flex items-center justify-center hover:bg-[#1a8cd8] transition-colors shadow-lg"
+                >
+                  Twitter
+                </a>
+                <a 
+                  href={`https://www.facebook.com/sharer/sharer.php?u=https://friscobiryani.com`}
+                  target="_blank" rel="noopener noreferrer"
+                  className="flex-1 py-3 rounded-xl bg-[#1877F2] text-white text-sm font-bold flex items-center justify-center hover:bg-[#166FE5] transition-colors shadow-lg"
+                >
+                  Facebook
+                </a>
+              </div>
+              
               <div className="text-center pt-4">
                 <button 
                   onClick={resetQuiz}
