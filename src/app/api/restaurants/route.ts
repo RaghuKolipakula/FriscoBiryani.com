@@ -1,5 +1,8 @@
 import { NextResponse } from "next/server";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const archetype = searchParams.get("archetype");
@@ -57,6 +60,7 @@ export async function GET(request: Request) {
     // 2. Fetch live data from Google Places (New) API
     const response = await fetch('https://places.googleapis.com/v1/places:searchText', {
       method: 'POST',
+      cache: 'no-store',
       headers: {
         'Content-Type': 'application/json',
         'X-Goog-Api-Key': apiKey,
