@@ -98,7 +98,7 @@ export async function GET(request: Request) {
     const comparedCount = data.places.length;
     const comparedList = data.places.map((p: any) => p.displayName?.text).filter(Boolean);
 
-    // 3. Find the highest-rated place among the returned results
+    // 3. Pick a top-rated place with some randomness so it's not always the exact same #1
     const sortedPlaces = data.places.sort((a: any, b: any) => {
       if (b.rating === a.rating) {
         return (b.userRatingCount || 0) - (a.userRatingCount || 0);
@@ -106,7 +106,10 @@ export async function GET(request: Request) {
       return (b.rating || 0) - (a.rating || 0);
     });
 
-    const bestPlace = sortedPlaces[0];
+    // Take top 5 highest rated and pick one randomly to keep the quiz fun
+    const topCandidates = sortedPlaces.slice(0, Math.min(5, sortedPlaces.length));
+    const randomIndex = Math.floor(Math.random() * topCandidates.length);
+    const bestPlace = topCandidates[randomIndex];
     
     // Extract a review snippet safely
     let reviewSnippet = "A highly-rated local favorite!";
