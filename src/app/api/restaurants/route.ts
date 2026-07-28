@@ -12,18 +12,7 @@ export async function GET(request: Request) {
   }
 
   let apiKey = process.env.GOOGLE_PLACES_API_KEY;
-  let debugCtxError = null;
-  
-  try {
-    // In Cloudflare Pages via OpenNext, env variables are often exposed via getRequestContext
-    const { getRequestContext } = require("@opennextjs/cloudflare");
-    const ctx = getRequestContext();
-    if (ctx?.env?.GOOGLE_PLACES_API_KEY) {
-      apiKey = ctx.env.GOOGLE_PLACES_API_KEY;
-    }
-  } catch (e) {
-    debugCtxError = e instanceof Error ? e.message : String(e);
-  }
+  let debugCtxError = "Removed require";
   
   const FAKE_FALLBACK = {
     success: true,
