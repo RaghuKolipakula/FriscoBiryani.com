@@ -6,14 +6,14 @@ import { Flame } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Best Frisco Biryani | Find Top Indian Restaurants in Frisco, TX",
-  description: "Looking for the best Frisco Biryani? Take our quick quiz to discover top-rated authentic biryani restaurants in Frisco, TX, matched to your taste and spice level.",
+  description: "Discover the ultimate guide to the best Frisco Biryani. Filter and search top-rated authentic biryani restaurants in Frisco, Plano, and McKinney.",
   keywords: ["Frisco Biryani", "Best Biryani in Frisco", "Frisco TX Biryani", "Indian Restaurants Frisco", "Top Biryani Places Frisco", "Authentic Biryani Frisco TX"],
   alternates: {
     canonical: 'https://friscobiryani.com',
   },
   openGraph: {
     title: "Best Frisco Biryani | Find Top Indian Restaurants in Frisco, TX",
-    description: "Looking for the best Frisco Biryani? Take our quick quiz to discover top-rated authentic biryani restaurants in Frisco, TX, matched to your taste.",
+    description: "Discover the ultimate guide to the best Frisco Biryani. Filter and search top-rated authentic biryani restaurants in Frisco, TX.",
     url: 'https://friscobiryani.com',
     siteName: 'FriscoBiryani.com',
     locale: 'en_US',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Best Frisco Biryani | Find Top Indian Restaurants in Frisco, TX",
-    description: "Looking for the best Frisco Biryani? Take our quick quiz to discover top-rated authentic biryani restaurants in Frisco, TX.",
+    description: "Discover the ultimate guide to the best Frisco Biryani. Filter and search top-rated authentic biryani restaurants in Frisco, TX.",
   }
 };
 
@@ -79,7 +79,7 @@ export default function RootLayout({
                   <span className="text-orange-500 text-xs font-medium">.com</span>
                 </span>
                 <span className="block text-[10px] text-slate-400 font-medium tracking-wide">
-                  LOCAL DISCOVERY QUIZ
+                  LOCAL RESTAURANT GUIDE
                 </span>
               </div>
             </Link>
@@ -104,7 +104,7 @@ export default function RootLayout({
                 <span className="text-lg font-bold text-white">FriscoBiryani.com</span>
               </div>
               <p className="text-sm text-slate-400 leading-relaxed max-w-sm mx-auto sm:mx-0">
-                Frisco&apos;s premier interactive biryani discovery tool. Find the perfect local spot that matches your vibe and spice tolerance.
+                Frisco&apos;s premier interactive biryani discovery tool. Search, filter, and find the perfect local spot that matches your vibe and spice tolerance.
               </p>
             </div>
 
@@ -112,7 +112,7 @@ export default function RootLayout({
             <div className="flex flex-col sm:items-end justify-center">
               <h4 className="text-sm font-semibold text-slate-200 uppercase tracking-wider mb-4">Quick Links</h4>
               <ul className="space-y-2.5 text-sm text-slate-400 flex flex-col sm:items-end">
-                <li><Link href="/" className="hover:text-amber-400 transition-colors">Take the Quiz</Link></li>
+                <li><Link href="/" className="hover:text-amber-400 transition-colors">Restaurant Directory</Link></li>
                 <li><Link href="/privacy" className="hover:text-amber-400 transition-colors">Privacy Policy</Link></li>
                 <li><Link href="/terms" className="hover:text-amber-400 transition-colors">Terms of Service</Link></li>
               </ul>

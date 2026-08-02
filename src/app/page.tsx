@@ -1,456 +1,193 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import Link from "next/link";
-import { Share2, ArrowRight, RotateCcw, CheckCircle2, ChefHat } from "lucide-react";
+import { Search, MapPin, Star, Tag, ChevronRight, Award } from "lucide-react";
+import restaurantsData from "../data/restaurants.json";
 
-// --- TYPES ---
-type ArchetypeId = "heat-seeker" | "traditionalist" | "leader" | "loyalist";
+// Extract unique tags from data
+const ALL_TAGS = Array.from(new Set(restaurantsData.flatMap(r => r.tags))).sort();
 
-interface Answer {
-  text: string;
-  points: Partial<Record<ArchetypeId, number>>;
-}
+export default function DirectoryPage() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
-interface Question {
-  id: number;
-  question: string;
-  answers: Answer[];
-}
-
-interface Result {
-  id: ArchetypeId;
-  title: string;
-  subtitle: string;
-  description: string;
-  dish: string;
-}
-
-// --- DATA ---
-const QUESTIONS: Question[] = [
-  {
-    id: 1,
-    question: "How spicy do you like it?",
-    answers: [
-      { text: "Extra spicy 🌶️🌶️", points: { "heat-seeker": 3 } },
-      { text: "Balanced", points: { "leader": 2, "traditionalist": 1 } },
-      { text: "Mild but flavorful", points: { "loyalist": 2, "leader": 1 } },
-    ],
-  },
-  {
-    id: 2,
-    question: "What matters most in biryani?",
-    answers: [
-      { text: "The melt-in-your-mouth meat", points: { "heat-seeker": 1, "loyalist": 2 } },
-      { text: "The fragrant basmati rice", points: { "traditionalist": 3 } },
-      { text: "The hypnotic aroma", points: { "traditionalist": 1, "leader": 1 } },
-      { text: "The leftovers tomorrow", points: { "loyalist": 3 } },
-    ],
-  },
-  {
-    id: 3,
-    question: "What's your ideal biryani moment?",
-    answers: [
-      { text: "A weekend reward", points: { "loyalist": 2 } },
-      { text: "A big family feast", points: { "leader": 3 } },
-      { text: "A late-night craving", points: { "heat-seeker": 2 } },
-      { text: "A traditional Sunday lunch", points: { "traditionalist": 2 } },
-    ],
-  },
-  {
-    id: 4,
-    question: "Do you prefer classic or experimental?",
-    answers: [
-      { text: "Stick to the heritage roots", points: { "traditionalist": 3, "leader": 1 } },
-      { text: "Surprise me with bold flavors", points: { "heat-seeker": 3, "loyalist": 1 } },
-    ],
-  },
-  {
-    id: 5,
-    question: "What do you do with the last bite?",
-    answers: [
-      { text: "Savor it slowly", points: { "traditionalist": 2 } },
-      { text: "Fight my sibling for it", points: { "leader": 2, "heat-seeker": 1 } },
-      { text: "Pack it up for tomorrow", points: { "loyalist": 3 } },
-    ],
-  }
-];
-
-const RESULTS: Record<ArchetypeId, Result> = {
-  "heat-seeker": {
-    id: "heat-seeker",
-    title: "Hyderabadi Heat-Seeker",
-    subtitle: "Bold, fast, and never afraid of heat.",
-    description: "You want biryani with personality. You notice aroma first, spice second, and leftovers never happen. If it doesn't make you sweat a little, is it even biryani?",
-    dish: "Vijayawada Special Boneless Chicken 65 Biryani"
-  },
-  "traditionalist": {
-    id: "traditionalist",
-    title: "Rice-First Traditionalist",
-    subtitle: "You respect the Dum. You respect the Basmati.",
-    description: "You know that the true magic of biryani lies in perfectly cooked, separate grains of rice infused with saffron and slow-cooked meat. No shortcuts allowed.",
-    dish: "Hyderabadi Mutton Dum Biryani"
-  },
-  "leader": {
-    id: "leader",
-    title: "Frisco Family Feast Leader",
-    subtitle: "Biryani is a community event, and you're hosting.",
-    description: "You don't just eat biryani; you orchestrate it. You're the one making sure everyone gets a perfect ratio of meat, rice, and raita.",
-    dish: "Rayalaseema Gongura Goat Biryani (Family Pack)"
-  },
-  "loyalist": {
-    id: "loyalist",
-    title: "The 'One More Scoop' Loyalist",
-    subtitle: "Full? Yes. Done? Never.",
-    description: "You appreciate comfort above all else. You claim you're full, but we all know you're sneaking one final scoop before the handi is put away.",
-    dish: "Ambur Seeraga Samba Chicken Biryani"
-  }
-};
-
-// --- COMPONENT ---
-export default function ViralQuizPage() {
-  const [step, setStep] = useState<"intro" | "quiz" | "loading" | "result">("intro");
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [scores, setScores] = useState<Record<ArchetypeId, number>>({
-    "heat-seeker": 0,
-    "traditionalist": 0,
-    "leader": 0,
-    "loyalist": 0
-  });
-  const [finalResult, setFinalResult] = useState<Result | null>(null);
-  const [copied, setCopied] = useState(false);
-
-  const [restaurantMatch, setRestaurantMatch] = useState<any>(null);
-  const [comparedCount, setComparedCount] = useState<number>(0);
-  const [comparedList, setComparedList] = useState<string[]>([]);
-  const [showCompared, setShowCompared] = useState(false);
-  const [flippingName, setFlippingName] = useState<string>("Scanning local spots...");
-
-  const currentQuestion = QUESTIONS[currentQuestionIndex];
-
-  const handleAnswer = (points: Partial<Record<ArchetypeId, number>>) => {
-    // Update scores
-    const newScores = { ...scores };
-    (Object.keys(points) as ArchetypeId[]).forEach(key => {
-      newScores[key] += points[key] || 0;
+  // Filter restaurants based on search and selected tag
+  const filteredRestaurants = useMemo(() => {
+    return restaurantsData.filter((r) => {
+      const matchesSearch = r.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                            r.specialty.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesTag = selectedTag ? r.tags.includes(selectedTag) : true;
+      return matchesSearch && matchesTag;
     });
-    setScores(newScores);
-
-    // Next step
-    if (currentQuestionIndex < QUESTIONS.length - 1) {
-      setCurrentQuestionIndex(prev => prev + 1);
-    } else {
-      calculateResult(newScores);
-    }
-  };
-
-  const calculateResult = async (finalScores: Record<ArchetypeId, number>) => {
-    setStep("loading");
-    
-    // Find highest score
-    let topArchetype: ArchetypeId = "traditionalist";
-    let maxScore = -1;
-    
-    (Object.keys(finalScores) as ArchetypeId[]).forEach(key => {
-      if (finalScores[key] > maxScore) {
-        maxScore = finalScores[key];
-        topArchetype = key;
-      }
-    });
-
-    setFinalResult(RESULTS[topArchetype]);
-
-    // Fetch local restaurant match from our background module API
-    try {
-      const res = await fetch(`/api/restaurants?archetype=${topArchetype}`);
-      const json = await res.json();
-      if (json.success) {
-        setRestaurantMatch(json.data);
-        setComparedCount(json.comparedCount || 0);
-        
-        const list = json.comparedList || [];
-        setComparedList(list);
-
-        if (list.length > 0) {
-           let i = 0;
-           const interval = setInterval(() => {
-              setFlippingName(list[i % list.length]);
-              i++;
-           }, 150); // Flip every 150ms
-
-           setTimeout(() => {
-              clearInterval(interval);
-              setStep("result");
-           }, 2500); // Wait 2.5s before showing result
-           return;
-        }
-      }
-    } catch (e) {
-      console.error("Failed to fetch restaurant match", e);
-    }
-
-    // Simulate Dramatic Loading (Fallback if list is empty or API fails)
-    setTimeout(() => {
-      setStep("result");
-    }, 2500);
-  };
-
-  const shareText = finalResult 
-    ? `I'm the ${finalResult.title} — what type of biryani eater are you? Find out at friscobiryani.com!`
-    : "";
-
-  const handleShare = async () => {
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: "Frisco Biryani Quiz",
-          text: shareText,
-          url: "https://friscobiryani.com",
-        });
-      } catch (err) {
-        console.log("Share failed", err);
-      }
-    } else {
-      // Fallback
-      navigator.clipboard.writeText(`${shareText} https://friscobiryani.com`);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    }
-  };
-
-  const resetQuiz = () => {
-    setScores({ "heat-seeker": 0, "traditionalist": 0, "leader": 0, "loyalist": 0 });
-    setCurrentQuestionIndex(0);
-    setFinalResult(null);
-    setStep("intro");
-  };
+  }, [searchQuery, selectedTag]);
 
   return (
-    <main className="min-h-[90vh] flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8 relative overflow-hidden bg-slate-950">
+    <main className="min-h-[90vh] bg-slate-950 text-slate-200">
       
-      {/* Ambient Backgrounds */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-amber-600/20 to-transparent blur-[100px] pointer-events-none" />
-      
-      <div className="w-full max-w-lg mx-auto relative z-10 transition-all duration-500">
+      {/* Hero Section */}
+      <section className="relative pt-24 pb-16 px-6 sm:px-12 lg:px-24 overflow-hidden border-b border-slate-800">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[400px] bg-amber-500/5 blur-[120px] rounded-full pointer-events-none" />
         
-        {/* ================= INTRO STATE ================= */}
-        {step === "intro" && (
-          <div className="text-center space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-widest shadow-lg">
-              <ChefHat className="w-4 h-4" />
-              <span>Personality Quiz</span>
-            </div>
-            
-            <h1 className="text-5xl sm:text-6xl font-black text-white tracking-tight leading-tight mb-4">
-              Find the Best <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">Frisco Biryani</span>
-            </h1>
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-200">
-              What kind of Biryani eater are you?
-            </h2>
-            
-            <p className="text-slate-400 text-lg">
-              Take this 5-question quiz to discover your biryani archetype and find your perfect weekend food drop match.
-            </p>
-            
-            <button 
-              onClick={() => setStep("quiz")}
-              className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-slate-950 font-black text-xl shadow-xl hover:shadow-amber-500/20 transition-all hover:-translate-y-1"
-            >
-              Start Quiz Now
-            </button>
+        <div className="max-w-5xl mx-auto relative z-10 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-amber-500 text-xs font-bold uppercase tracking-widest mb-8">
+            <MapPin className="w-4 h-4" />
+            <span>The Local Frisco Guide</span>
           </div>
-        )}
+          
+          <h1 className="text-4xl sm:text-6xl font-black text-white tracking-tight leading-tight mb-6">
+            Find the Best <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">Authentic Biryani</span> Near You
+          </h1>
+          <p className="text-lg text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+            Discover {restaurantsData.length} top-rated Indian restaurants in the Frisco, Plano, and McKinney area. Filter by specialty, read real reviews, and find your next favorite spot.
+          </p>
 
-        {/* ================= QUIZ STATE ================= */}
-        {step === "quiz" && (
-          <div className="glass-card bg-slate-900/80 p-6 sm:p-8 rounded-3xl border border-slate-800 shadow-2xl">
-            {/* Progress Bar */}
-            <div className="mb-8">
-              <div className="flex justify-between text-xs text-slate-500 font-bold tracking-wider uppercase mb-2">
-                <span>Question {currentQuestionIndex + 1} of {QUESTIONS.length}</span>
-                <span>{Math.round(((currentQuestionIndex + 1) / QUESTIONS.length) * 100)}%</span>
-              </div>
-              <div className="w-full bg-slate-950 rounded-full h-2 border border-slate-800 overflow-hidden">
-                <div 
-                  className="bg-gradient-to-r from-amber-500 to-orange-500 h-full rounded-full transition-all duration-500"
-                  style={{ width: `${((currentQuestionIndex + 1) / QUESTIONS.length) * 100}%` }}
-                />
-              </div>
+          {/* Search Bar */}
+          <div className="max-w-2xl mx-auto relative group">
+            <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
+              <Search className="w-6 h-6 text-slate-500 group-focus-within:text-amber-500 transition-colors" />
             </div>
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search for 'Hyderabadi', 'Vegetarian', 'Bawarchi'..."
+              className="w-full bg-slate-900 border-2 border-slate-800 rounded-2xl py-4 pl-14 pr-6 text-lg text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all shadow-xl"
+            />
+          </div>
+        </div>
+      </section>
 
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-8 leading-tight">
-              {currentQuestion.question}
-            </h2>
+      {/* Editor's Highlight */}
+      <section className="px-6 sm:px-12 lg:px-24 py-12 bg-slate-900/30">
+        <div className="max-w-5xl mx-auto">
+          <Link 
+            href="/best-biryani-frisco-tx"
+            className="group flex flex-col md:flex-row items-center gap-6 p-6 md:p-8 rounded-3xl bg-gradient-to-r from-amber-500/10 to-orange-600/10 border border-amber-500/20 hover:border-amber-500/40 transition-all"
+          >
+            <div className="w-16 h-16 shrink-0 rounded-2xl bg-amber-500/20 flex items-center justify-center text-amber-500 group-hover:scale-110 transition-transform">
+              <Award className="w-8 h-8" />
+            </div>
+            <div className="flex-1 text-center md:text-left">
+              <h2 className="text-xl md:text-2xl font-bold text-amber-400 mb-2">Editor's Choice: The Top 10 Best Biryani in Frisco</h2>
+              <p className="text-slate-300">We ranked the absolute best spots for authentic Biryani. See who took the #1 spot this year.</p>
+            </div>
+            <div className="shrink-0">
+              <span className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-500 text-slate-950 font-bold hover:bg-amber-400 transition-colors">
+                View the List <ChevronRight className="w-5 h-5" />
+              </span>
+            </div>
+          </Link>
+        </div>
+      </section>
 
-            <div className="space-y-3">
-              {currentQuestion.answers.map((answer, idx) => (
+      {/* Main Directory */}
+      <section className="px-6 sm:px-12 lg:px-24 py-16">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12">
+          
+          {/* Sidebar / Filters */}
+          <aside className="lg:w-64 shrink-0">
+            <div className="sticky top-24">
+              <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                <Tag className="w-4 h-4" /> Filter by Type
+              </h3>
+              <div className="flex flex-wrap lg:flex-col gap-2">
                 <button
-                  key={idx}
-                  onClick={() => handleAnswer(answer.points)}
-                  className="w-full p-4 rounded-xl text-left font-bold text-slate-300 bg-slate-950 border border-slate-800 hover:border-amber-500/50 hover:bg-slate-800 hover:text-white transition-all active:scale-[0.98] shadow-sm flex items-center justify-between group"
+                  onClick={() => setSelectedTag(null)}
+                  className={`text-left px-4 py-2 rounded-xl text-sm font-medium transition-colors ${
+                    selectedTag === null 
+                      ? "bg-amber-500 text-slate-950" 
+                      : "bg-slate-900 text-slate-400 hover:bg-slate-800 hover:text-white"
+                  }`}
                 >
-                  <span>{answer.text}</span>
-                  <ArrowRight className="w-5 h-5 text-slate-600 group-hover:text-amber-500 transition-colors" />
+                  All Restaurants
                 </button>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* ================= LOADING STATE ================= */}
-        {step === "loading" && (
-          <div className="text-center space-y-6 py-12">
-            <div className="relative w-24 h-24 mx-auto">
-              <div className="absolute inset-0 border-t-4 border-amber-500 rounded-full animate-spin"></div>
-              <div className="absolute inset-2 border-l-4 border-orange-500 rounded-full animate-spin" style={{ animationDirection: "reverse" }}></div>
-              <div className="absolute inset-0 flex items-center justify-center text-3xl">
-                🍲
+                {ALL_TAGS.map((tag) => (
+                  <button
+                    key={tag}
+                    onClick={() => setSelectedTag(tag)}
+                    className={`text-left px-4 py-2 rounded-xl text-sm font-medium transition-colors ${
+                      selectedTag === tag 
+                        ? "bg-amber-500 text-slate-950" 
+                        : "bg-slate-900 text-slate-400 hover:bg-slate-800 hover:text-white"
+                    }`}
+                  >
+                    {tag}
+                  </button>
+                ))}
               </div>
             </div>
-            <h2 className="text-2xl font-bold text-white animate-pulse">Calculating your Biryani type...</h2>
-            <p className="text-slate-400 text-sm">Analyzing spice tolerance and rice preferences.</p>
-            
-            <div className="mt-8 p-4 bg-slate-900 rounded-xl border border-slate-800 shadow-inner overflow-hidden max-w-xs mx-auto">
-              <span className="text-[10px] text-amber-500 font-bold uppercase tracking-widest block mb-2">Finding your match</span>
-              <p className="text-white font-mono text-sm truncate animate-pulse">
-                {flippingName}
-              </p>
-            </div>
-          </div>
-        )}
+          </aside>
 
-        {/* ================= RESULT STATE ================= */}
-        {step === "result" && finalResult && (
-          <div>
-            
-            {/* The Result Card (Highly Shareable) */}
-            <div className="bg-gradient-to-br from-slate-900 to-slate-950 p-6 sm:p-8 rounded-3xl border border-amber-500/30 shadow-2xl relative overflow-hidden mb-6 group">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 blur-[60px] rounded-full pointer-events-none" />
-              
-              <div className="text-center relative z-10 space-y-4">
-                <span className="text-xs font-bold text-amber-500 uppercase tracking-widest block">
-                  You are the...
-                </span>
-                <h2 className="text-4xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-orange-500 leading-tight pb-2">
-                  {finalResult.title}
-                </h2>
-                <h3 className="text-lg text-white font-semibold">
-                  "{finalResult.subtitle}"
-                </h3>
-                <p className="text-slate-400 text-sm leading-relaxed max-w-sm mx-auto pt-2 pb-4">
-                  {finalResult.description}
-                </p>
-                
-                <div className="bg-slate-950 p-5 rounded-2xl border border-slate-800 text-left mt-4 relative overflow-hidden group">
-                  <div className="absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-20 transition-opacity text-4xl">
-                    📍
-                  </div>
-                  <span className="text-[10px] text-amber-500 uppercase font-bold tracking-wider block mb-3">Local Vibe Match</span>
-                  
-                  {restaurantMatch ? (
-                    <>
-                      <h4 className="text-white font-bold text-xl mb-2">{restaurantMatch.name}</h4>
-                      <div className="flex items-center gap-2 mb-4">
-                        <span className="bg-amber-500 text-slate-950 text-xs font-bold px-2 py-0.5 rounded flex items-center gap-1">
-                          ★ {restaurantMatch.rating}
-                        </span>
-                        <span className="text-slate-500 text-xs font-medium">({restaurantMatch.reviewCount} reviews)</span>
+          {/* Results Grid */}
+          <div className="flex-1">
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="text-2xl font-bold text-white">
+                {selectedTag ? `${selectedTag} Spots` : "All Restaurants"}
+              </h2>
+              <span className="text-sm text-slate-500 font-medium bg-slate-900 px-3 py-1 rounded-lg">
+                {filteredRestaurants.length} Results
+              </span>
+            </div>
+
+            {filteredRestaurants.length === 0 ? (
+              <div className="text-center py-20 bg-slate-900/50 rounded-3xl border border-slate-800">
+                <p className="text-slate-400 text-lg">No restaurants found matching your criteria.</p>
+                <button 
+                  onClick={() => { setSearchQuery(""); setSelectedTag(null); }}
+                  className="mt-4 text-amber-500 font-medium hover:text-amber-400"
+                >
+                  Clear all filters
+                </button>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                {filteredRestaurants.map((restaurant) => (
+                  <Link 
+                    key={restaurant.id}
+                    href={`/restaurant/${restaurant.slug}`}
+                    className="group flex flex-col bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-amber-500/50 transition-all hover:shadow-lg hover:shadow-amber-500/5"
+                  >
+                    <div className="p-6 flex-1 flex flex-col">
+                      <div className="flex items-start justify-between gap-4 mb-3">
+                        <h3 className="text-xl font-bold text-white group-hover:text-amber-400 transition-colors line-clamp-2">
+                          {restaurant.name}
+                        </h3>
+                        <div className="flex text-amber-500 shrink-0 mt-1">
+                          <Star className="w-4 h-4 fill-current" />
+                        </div>
                       </div>
                       
-                      {comparedCount > 1 && (
-                        <div className="mb-4">
-                          <button 
-                            onClick={() => setShowCompared(!showCompared)}
-                            className="text-xs text-slate-400 hover:text-amber-400 transition-colors flex items-center gap-1"
-                          >
-                            <ChefHat className="w-3 h-3" />
-                            We analyzed {comparedCount} local spots for this match. {showCompared ? "Hide" : "See them"}
-                          </button>
-                          {showCompared && (
-                            <div className="mt-2 p-2 bg-slate-900 rounded-lg border border-slate-800 text-[10px] text-slate-500 flex flex-wrap gap-1.5">
-                              {comparedList.map((name, i) => (
-                                <span key={i} className="bg-slate-950 px-1.5 py-0.5 rounded">
-                                  {name}
-                                </span>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                      )}
-
-                      <p className="text-slate-400 text-sm italic border-l-2 border-slate-700 pl-4 py-1 mb-5 leading-relaxed">
-                        "{restaurantMatch.reviewSnippet}"
+                      <p className="text-sm text-slate-400 line-clamp-3 mb-6 flex-1">
+                        {restaurant.specialty}
                       </p>
-                      
-                      <a 
-                        href={restaurantMatch.externalUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-sm font-bold transition-all active:scale-[0.98]"
-                      >
-                        View on Google Maps <ArrowRight className="w-4 h-4" />
-                      </a>
-                    </>
-                  ) : (
-                    <span className="text-emerald-400 font-bold block">{finalResult.dish}</span>
-                  )}
-                </div>
-              </div>
-            </div>
 
-            {/* Actions */}
-            <div className="space-y-4">
-              <button 
-                onClick={handleShare}
-                className="w-full py-4 rounded-2xl bg-white text-slate-950 font-black text-lg shadow-xl hover:bg-slate-200 transition-all active:scale-[0.98] flex items-center justify-center gap-2"
-              >
-                {copied ? <CheckCircle2 className="w-5 h-5" /> : <Share2 className="w-5 h-5" />}
-                {copied ? "Link Copied!" : "Share Quiz Result"}
-              </button>
-              
-              {/* Automated Viral Loop Buttons */}
-              <div className="flex gap-2 w-full mt-2">
-                <a 
-                  href={`https://wa.me/?text=${encodeURIComponent((finalResult ? `I'm the ${finalResult.title} — what type of biryani eater are you? Find out at ` : '') + 'https://friscobiryani.com')}`}
-                  target="_blank" rel="noopener noreferrer"
-                  className="flex-1 py-3 rounded-xl bg-[#25D366] text-white text-sm font-bold flex items-center justify-center hover:bg-[#1DA851] transition-colors shadow-lg"
-                >
-                  WhatsApp
-                </a>
-                <a 
-                  href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(finalResult ? `I'm the ${finalResult.title} — what type of biryani eater are you? Find out at ` : '')}&url=https://friscobiryani.com`}
-                  target="_blank" rel="noopener noreferrer"
-                  className="flex-1 py-3 rounded-xl bg-[#1DA1F2] text-white text-sm font-bold flex items-center justify-center hover:bg-[#1a8cd8] transition-colors shadow-lg"
-                >
-                  Twitter
-                </a>
-                <a 
-                  href={`https://www.facebook.com/sharer/sharer.php?u=https://friscobiryani.com`}
-                  target="_blank" rel="noopener noreferrer"
-                  className="flex-1 py-3 rounded-xl bg-[#1877F2] text-white text-sm font-bold flex items-center justify-center hover:bg-[#166FE5] transition-colors shadow-lg"
-                >
-                  Facebook
-                </a>
-              </div>
-              
-              <div className="text-center pt-4">
-                <button 
-                  onClick={resetQuiz}
-                  className="text-slate-500 hover:text-white text-sm font-semibold transition-colors flex items-center justify-center gap-1.5 mx-auto"
-                >
-                  <RotateCcw className="w-4 h-4" /> Take the quiz again
-                </button>
-              </div>
-            </div>
-            
-            <p className="text-center text-slate-500 text-xs mt-8">
-              Tag a friend who is this exact type!
-            </p>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {restaurant.tags.slice(0, 2).map((tag: string) => (
+                          <span key={tag} className="text-[10px] font-bold uppercase tracking-wider px-2 py-1 bg-slate-800 text-slate-300 rounded">
+                            {tag}
+                          </span>
+                        ))}
+                        {restaurant.tags.length > 2 && (
+                          <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-1 bg-slate-800 text-slate-500 rounded">
+                            +{restaurant.tags.length - 2}
+                          </span>
+                        )}
+                      </div>
 
+                      <div className="flex items-center gap-2 text-slate-500 text-xs border-t border-slate-800 pt-4 mt-auto">
+                        <MapPin className="w-3.5 h-3.5" />
+                        <span className="truncate">{restaurant.address}</span>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            )}
           </div>
-        )}
 
-      </div>
+        </div>
+      </section>
     </main>
   );
 }

@@ -6,7 +6,10 @@
     "website": "theulavacharu.com",
     "phone": "+1 469-535-9191",
     "address": "7875 S Custer Rd, Frisco, TX 75035",
-    "specialty": "Authentic Andhra cuisine with bold South Indian spices; highly regarded for specialized biryanis and pulavs."
+    "specialty": "Authentic Andhra cuisine with bold South Indian spices; highly regarded for specialized biryanis and pulavs.",
+    "tags": [
+      "South Indian"
+    ]
   },
   {
     "id": "2",
@@ -15,7 +18,10 @@
     "website": "spicyvihaar.com",
     "phone": "+1 469-902-8883",
     "address": "4235 Preston Rd Ste 100, Frisco, TX 75034",
-    "specialty": "Elegant dining atmosphere focused on complex, layered spices and signature roasted meat dishes."
+    "specialty": "Elegant dining atmosphere focused on complex, layered spices and signature roasted meat dishes.",
+    "tags": [
+      "Biryani Specialist"
+    ]
   },
   {
     "id": "3",
@@ -24,7 +30,10 @@
     "website": "bharatbhavan.com",
     "phone": "+1 214-296-2190",
     "address": "13355 Main St, Frisco, TX 75035",
-    "specialty": "Pure vegetarian kitchen utilizing fresh ingredients to recreate traditional, homestyle Indian comfort foods."
+    "specialty": "Pure vegetarian kitchen utilizing fresh ingredients to recreate traditional, homestyle Indian comfort foods.",
+    "tags": [
+      "Vegetarian"
+    ]
   },
   {
     "id": "4",
@@ -33,7 +42,10 @@
     "website": "saigayatricurrypoint.com",
     "phone": "+1 972-468-6544",
     "address": "6449 Coit Rd #112, Frisco, TX 75035",
-    "specialty": "Casual, counter-serve spot dedicated to quick, wholesome mom-style daily curries and takeaway staples."
+    "specialty": "Casual, counter-serve spot dedicated to quick, wholesome mom-style daily curries and takeaway staples.",
+    "tags": [
+      "Biryani Specialist"
+    ]
   },
   {
     "id": "5",
@@ -42,7 +54,11 @@
     "website": "chennaicafeusa.com",
     "phone": "+1 972-335-5151",
     "address": "3301 Preston Rd, Frisco, TX 75034",
-    "specialty": "Renowned for traditional Chettinad flavors, an extensive menu of dosas, and authentic South Indian filter coffee."
+    "specialty": "Renowned for traditional Chettinad flavors, an extensive menu of dosas, and authentic South Indian filter coffee.",
+    "tags": [
+      "Chettinad",
+      "South Indian"
+    ]
   },
   {
     "id": "6",
@@ -51,7 +67,10 @@
     "website": "godavarius.com",
     "phone": "+1 469-952-6468",
     "address": "16402 TX-121, Frisco, TX 75035",
-    "specialty": "Famous for its expansive weekend lunch buffets featuring a vast spread of regional South Indian delicacies."
+    "specialty": "Famous for its expansive weekend lunch buffets featuring a vast spread of regional South Indian delicacies.",
+    "tags": [
+      "South Indian"
+    ]
   },
   {
     "id": "7",
@@ -60,7 +79,11 @@
     "website": "bawarchifrisco.com",
     "phone": "+1 469-362-5201",
     "address": "4950 Eldorado Pkwy, Frisco, TX 75033",
-    "specialty": "Offers a massive selection of Hyderabadi biryanis alongside fast-casual Indian appetizers and street food."
+    "specialty": "Offers a massive selection of Hyderabadi biryanis alongside fast-casual Indian appetizers and street food.",
+    "tags": [
+      "Hyderabadi",
+      "Street Food"
+    ]
   },
   {
     "id": "8",
@@ -69,7 +92,10 @@
     "website": "theflavorlounge.com",
     "phone": "+1 469-712-3591",
     "address": "5855 Preston Rd Suite #600, Frisco, TX 75034",
-    "specialty": "Modern Indian restaurant offering a relaxed and stylish space with a menu featuring bold curries, sizzling tandoori."
+    "specialty": "Modern Indian restaurant offering a relaxed and stylish space with a menu featuring bold curries, sizzling tandoori.",
+    "tags": [
+      "Biryani Specialist"
+    ]
   },
   {
     "id": "9",
@@ -78,7 +104,10 @@
     "website": "rotigrill.us",
     "phone": "+1 469-980-7005",
     "address": "3675 Gaylord Parkway #1105, Frisco, TX 75034",
-    "specialty": "Modern spin on traditional Indian food, order-up-front with fresh naan and curries."
+    "specialty": "Modern spin on traditional Indian food, order-up-front with fresh naan and curries.",
+    "tags": [
+      "Biryani Specialist"
+    ]
   },
   {
     "id": "10",
@@ -87,7 +116,10 @@
     "website": "athidhiaalayam.us",
     "phone": "+1 469-420-9444",
     "address": "8880 Coleman Blvd, Frisco, TX 75034",
-    "specialty": "Top-rated Thali restaurant offering a traditional and immersive dining experience."
+    "specialty": "Top-rated Thali restaurant offering a traditional and immersive dining experience.",
+    "tags": [
+      "South Indian"
+    ]
   },
   {
     "id": "11",
@@ -96,7 +128,11 @@
     "website": "srikrishnavilas.us",
     "phone": "+1 972-464-4774",
     "address": "10050 Legacy Dr, Frisco, TX 75033",
-    "specialty": "Top-rated Thali restaurant known for authentic South Indian vegetarian dishes."
+    "specialty": "Top-rated Thali restaurant known for authentic South Indian vegetarian dishes.",
+    "tags": [
+      "Vegetarian",
+      "South Indian"
+    ]
   },
   {
     "id": "12",
@@ -105,7 +141,10 @@
     "website": "panjtaratx.com",
     "phone": "+1 469-200-5011",
     "address": "4800 W Main St, Frisco, TX 75033",
-    "specialty": "Lively atmosphere with traditional Punjabi cuisine and a full bar."
+    "specialty": "Lively atmosphere with traditional Punjabi cuisine and a full bar.",
+    "tags": [
+      "North Indian"
+    ]
   },
   {
     "id": "13",
@@ -114,7 +153,10 @@
     "website": "vrindavan.us",
     "phone": "+1 469-902-8000",
     "address": "2550 Preston Rd, Frisco, TX 75034",
-    "specialty": "Known for authentic, unlimited Indian thali experiences and catering."
+    "specialty": "Known for authentic, unlimited Indian thali experiences and catering.",
+    "tags": [
+      "South Indian"
+    ]
   },
   {
     "id": "14",
@@ -123,7 +165,10 @@
     "website": "anjapparplano.com",
     "phone": "+1 469-543-0219",
     "address": "4940 McDermott Rd, Plano, TX 75024",
-    "specialty": "Famous for Chettinad style cooking and spicy non-veg curries."
+    "specialty": "Famous for Chettinad style cooking and spicy non-veg curries.",
+    "tags": [
+      "Chettinad"
+    ]
   },
   {
     "id": "15",
@@ -132,7 +177,10 @@
     "website": "desivillageusa.com",
     "phone": "+1 972-379-2770",
     "address": "4701 W Park Blvd, Plano, TX 75093",
-    "specialty": "Authentic Indian cuisine including flavorful curry dishes and goat specialties."
+    "specialty": "Authentic Indian cuisine including flavorful curry dishes and goat specialties.",
+    "tags": [
+      "Biryani Specialist"
+    ]
   },
   {
     "id": "16",
@@ -141,7 +189,10 @@
     "website": "mumtazplano.com",
     "phone": "+1 972-596-7878",
     "address": "301 W Parker Rd #115, Plano, TX 75023",
-    "specialty": "Inviting atmosphere with customized menus and attentive service for celebrations."
+    "specialty": "Inviting atmosphere with customized menus and attentive service for celebrations.",
+    "tags": [
+      "Biryani Specialist"
+    ]
   },
   {
     "id": "17",
@@ -150,7 +201,10 @@
     "website": "jashan.us",
     "phone": "+1 469-362-7200",
     "address": "8408 Preston Rd, Plano, TX 75024",
-    "specialty": "Indian fine dining featuring signature tasting experiences."
+    "specialty": "Indian fine dining featuring signature tasting experiences.",
+    "tags": [
+      "Biryani Specialist"
+    ]
   },
   {
     "id": "18",
@@ -159,7 +213,10 @@
     "website": "theyellowchillidallas.com",
     "phone": "+1 469-626-0000",
     "address": "8400 Preston Rd, Plano, TX 75024",
-    "specialty": "Authentic Indian cuisine crafted by celebrity Chef Sanjeev Kapoor."
+    "specialty": "Authentic Indian cuisine crafted by celebrity Chef Sanjeev Kapoor.",
+    "tags": [
+      "Biryani Specialist"
+    ]
   },
   {
     "id": "19",
@@ -168,7 +225,10 @@
     "website": "kumarsplano.com",
     "phone": "+1 469-467-1798",
     "address": "1301 Custer Rd #500, Plano, TX 75075",
-    "specialty": "Mouth-watering South Indian specialties served traditionally on banana leaves."
+    "specialty": "Mouth-watering South Indian specialties served traditionally on banana leaves.",
+    "tags": [
+      "South Indian"
+    ]
   },
   {
     "id": "20",
@@ -177,7 +237,10 @@
     "website": "malgudigarden.com",
     "phone": "+1 972-491-1935",
     "address": "5024 Tennyson Pkwy, Plano, TX 75024",
-    "specialty": "Strictly vegetarian menu offering Karnataka regional foods."
+    "specialty": "Strictly vegetarian menu offering Karnataka regional foods.",
+    "tags": [
+      "Vegetarian"
+    ]
   },
   {
     "id": "21",
@@ -186,7 +249,11 @@
     "website": "saravanaabhavan.us",
     "phone": "+1 972-423-4244",
     "address": "8604 Preston Rd, Plano, TX 75024",
-    "specialty": "Global chain serving high-quality vegetarian South Indian dosas and idlis."
+    "specialty": "Global chain serving high-quality vegetarian South Indian dosas and idlis.",
+    "tags": [
+      "Vegetarian",
+      "South Indian"
+    ]
   },
   {
     "id": "22",
@@ -195,7 +262,10 @@
     "website": "pistahousetx.com",
     "phone": "+1 972-596-3333",
     "address": "610 W Bethany Dr, Allen, TX 75013",
-    "specialty": "World-renowned for its authentic Haleem and Hyderabadi Dum Biryani."
+    "specialty": "World-renowned for its authentic Haleem and Hyderabadi Dum Biryani.",
+    "tags": [
+      "Hyderabadi"
+    ]
   },
   {
     "id": "23",
@@ -204,7 +274,11 @@
     "website": "mughlaidfw.com",
     "phone": "+1 972-361-0010",
     "address": "4815 W 6th St, Frisco, TX 75034",
-    "specialty": "Elegant dining featuring rich North Indian Mughlai curries and kebabs."
+    "specialty": "Elegant dining featuring rich North Indian Mughlai curries and kebabs.",
+    "tags": [
+      "Mughlai",
+      "North Indian"
+    ]
   },
   {
     "id": "24",
@@ -213,7 +287,10 @@
     "website": "odesinukkad.com",
     "phone": "+1 972-469-0260",
     "address": "2851 Craig Dr, McKinney, TX 75070",
-    "specialty": "Street food lovers' paradise offering chaat, pav bhaji, and quick bites."
+    "specialty": "Street food lovers' paradise offering chaat, pav bhaji, and quick bites.",
+    "tags": [
+      "Street Food"
+    ]
   },
   {
     "id": "25",
@@ -222,7 +299,10 @@
     "website": "tajchaathouse.com",
     "phone": "+1 972-618-5000",
     "address": "3950 Central Expy, Plano, TX 75074",
-    "specialty": "Bustling spot famous for pani puri, bhel, and an array of Indian sweets."
+    "specialty": "Bustling spot famous for pani puri, bhel, and an array of Indian sweets.",
+    "tags": [
+      "Street Food"
+    ]
   },
   {
     "id": "26",
@@ -231,7 +311,10 @@
     "website": "biryanicafeplano.com",
     "phone": "+1 691-367-5301",
     "address": "1634 Lebanon Rd, Frisco, TX 75033",
-    "specialty": "Popular for authentic Vegetarian dishes and daily lunch specials."
+    "specialty": "Popular for authentic Vegetarian dishes and daily lunch specials.",
+    "tags": [
+      "Vegetarian"
+    ]
   },
   {
     "id": "27",
@@ -240,7 +323,10 @@
     "website": "urbangrilldfw.com",
     "phone": "+1 563-743-4785",
     "address": "8000 Lebanon Rd, Frisco, TX 75033",
-    "specialty": "Popular for authentic Punjabi dishes and daily lunch specials."
+    "specialty": "Popular for authentic Punjabi dishes and daily lunch specials.",
+    "tags": [
+      "North Indian"
+    ]
   },
   {
     "id": "28",
@@ -249,7 +335,10 @@
     "website": "currypalacefrisco.com",
     "phone": "+1 919-293-7712",
     "address": "3269 Lebanon Rd, Frisco, TX 75033",
-    "specialty": "Popular for authentic South Indian dishes and daily lunch specials."
+    "specialty": "Popular for authentic South Indian dishes and daily lunch specials.",
+    "tags": [
+      "South Indian"
+    ]
   },
   {
     "id": "29",
@@ -258,7 +347,10 @@
     "website": "saffronbistrodfw.com",
     "phone": "+1 554-472-6318",
     "address": "1720 Main St, Frisco, TX 75035",
-    "specialty": "Popular for authentic Vegetarian dishes and daily lunch specials."
+    "specialty": "Popular for authentic Vegetarian dishes and daily lunch specials.",
+    "tags": [
+      "Vegetarian"
+    ]
   },
   {
     "id": "30",
@@ -267,7 +359,10 @@
     "website": "royalgrill.com",
     "phone": "+1 536-273-2396",
     "address": "5495 Custer Rd, Frisco, TX 75033",
-    "specialty": "Popular for authentic Vegetarian dishes and daily lunch specials."
+    "specialty": "Popular for authentic Vegetarian dishes and daily lunch specials.",
+    "tags": [
+      "Vegetarian"
+    ]
   },
   {
     "id": "31",
@@ -276,7 +371,10 @@
     "website": "biryanipointdfw.com",
     "phone": "+1 811-919-9058",
     "address": "1472 Eldorado Pkwy, Frisco, TX 75033",
-    "specialty": "Popular for authentic Indo-Chinese dishes and daily lunch specials."
+    "specialty": "Popular for authentic Indo-Chinese dishes and daily lunch specials.",
+    "tags": [
+      "Indo-Chinese"
+    ]
   },
   {
     "id": "32",
@@ -285,7 +383,10 @@
     "website": "spicepointfrisco.com",
     "phone": "+1 816-274-3964",
     "address": "9762 Custer Rd, Frisco, TX 75033",
-    "specialty": "Popular for authentic Chettinad dishes and daily lunch specials."
+    "specialty": "Popular for authentic Chettinad dishes and daily lunch specials.",
+    "tags": [
+      "Chettinad"
+    ]
   },
   {
     "id": "33",
@@ -294,7 +395,10 @@
     "website": "saffronkitchendfw.com",
     "phone": "+1 835-755-3123",
     "address": "6245 Main St, Frisco, TX 75033",
-    "specialty": "Popular for authentic South Indian dishes and daily lunch specials."
+    "specialty": "Popular for authentic South Indian dishes and daily lunch specials.",
+    "tags": [
+      "South Indian"
+    ]
   },
   {
     "id": "34",
@@ -303,7 +407,10 @@
     "website": "biryaniloungefrisco.com",
     "phone": "+1 932-500-1733",
     "address": "8678 Coit Rd, Frisco, TX 75033",
-    "specialty": "Popular for authentic Vegetarian dishes and daily lunch specials."
+    "specialty": "Popular for authentic Vegetarian dishes and daily lunch specials.",
+    "tags": [
+      "Vegetarian"
+    ]
   },
   {
     "id": "35",
@@ -312,7 +419,10 @@
     "website": "saffronpoint.com",
     "phone": "+1 661-352-9618",
     "address": "8194 Preston Rd, Frisco, TX 75033",
-    "specialty": "Popular for authentic Indo-Chinese dishes and daily lunch specials."
+    "specialty": "Popular for authentic Indo-Chinese dishes and daily lunch specials.",
+    "tags": [
+      "Indo-Chinese"
+    ]
   },
   {
     "id": "36",
@@ -321,7 +431,10 @@
     "website": "currygrillplano.com",
     "phone": "+1 491-582-1360",
     "address": "9201 Coit Rd, Frisco, TX 75034",
-    "specialty": "Popular for authentic Indo-Chinese dishes and daily lunch specials."
+    "specialty": "Popular for authentic Indo-Chinese dishes and daily lunch specials.",
+    "tags": [
+      "Indo-Chinese"
+    ]
   },
   {
     "id": "37",
@@ -330,7 +443,10 @@
     "website": "saffronbowlplano.com",
     "phone": "+1 738-845-1149",
     "address": "1192 Lebanon Rd, Frisco, TX 75035",
-    "specialty": "Popular for authentic Vegetarian dishes and daily lunch specials."
+    "specialty": "Popular for authentic Vegetarian dishes and daily lunch specials.",
+    "tags": [
+      "Vegetarian"
+    ]
   },
   {
     "id": "38",
@@ -339,7 +455,10 @@
     "website": "desipalacedfw.com",
     "phone": "+1 955-866-3509",
     "address": "8799 Lebanon Rd, Frisco, TX 75035",
-    "specialty": "Popular for authentic Vegetarian dishes and daily lunch specials."
+    "specialty": "Popular for authentic Vegetarian dishes and daily lunch specials.",
+    "tags": [
+      "Vegetarian"
+    ]
   },
   {
     "id": "39",
@@ -348,7 +467,10 @@
     "website": "currykitchenplano.com",
     "phone": "+1 592-710-7918",
     "address": "2140 Coit Rd, Frisco, TX 75034",
-    "specialty": "Popular for authentic Indo-Chinese dishes and daily lunch specials."
+    "specialty": "Popular for authentic Indo-Chinese dishes and daily lunch specials.",
+    "tags": [
+      "Indo-Chinese"
+    ]
   },
   {
     "id": "40",
@@ -357,7 +479,10 @@
     "website": "spicehouseplano.com",
     "phone": "+1 880-565-2888",
     "address": "2439 Preston Rd, Frisco, TX 75033",
-    "specialty": "Popular for authentic South Indian dishes and daily lunch specials."
+    "specialty": "Popular for authentic South Indian dishes and daily lunch specials.",
+    "tags": [
+      "South Indian"
+    ]
   },
   {
     "id": "41",
@@ -366,7 +491,10 @@
     "website": "namastepalace.com",
     "phone": "+1 939-622-1471",
     "address": "9095 Preston Rd, Frisco, TX 75035",
-    "specialty": "Popular for authentic South Indian dishes and daily lunch specials."
+    "specialty": "Popular for authentic South Indian dishes and daily lunch specials.",
+    "tags": [
+      "South Indian"
+    ]
   },
   {
     "id": "42",
@@ -375,7 +503,10 @@
     "website": "urbandinerfrisco.com",
     "phone": "+1 504-279-5628",
     "address": "1473 Lebanon Rd, Frisco, TX 75035",
-    "specialty": "Popular for authentic Chettinad dishes and daily lunch specials."
+    "specialty": "Popular for authentic Chettinad dishes and daily lunch specials.",
+    "tags": [
+      "Chettinad"
+    ]
   },
   {
     "id": "43",
@@ -384,7 +515,10 @@
     "website": "saffrongrill.com",
     "phone": "+1 829-866-5939",
     "address": "8734 Eldorado Pkwy, Frisco, TX 75035",
-    "specialty": "Popular for authentic South Indian dishes and daily lunch specials."
+    "specialty": "Popular for authentic South Indian dishes and daily lunch specials.",
+    "tags": [
+      "South Indian"
+    ]
   },
   {
     "id": "44",
@@ -393,7 +527,10 @@
     "website": "saffronbowl.com",
     "phone": "+1 868-365-3115",
     "address": "6212 Legacy Dr, Frisco, TX 75033",
-    "specialty": "Popular for authentic Street Food dishes and daily lunch specials."
+    "specialty": "Popular for authentic Street Food dishes and daily lunch specials.",
+    "tags": [
+      "Street Food"
+    ]
   },
   {
     "id": "45",
@@ -402,7 +539,10 @@
     "website": "namasteloungedfw.com",
     "phone": "+1 664-800-2145",
     "address": "2345 Eldorado Pkwy, Frisco, TX 75035",
-    "specialty": "Popular for authentic Chettinad dishes and daily lunch specials."
+    "specialty": "Popular for authentic Chettinad dishes and daily lunch specials.",
+    "tags": [
+      "Chettinad"
+    ]
   },
   {
     "id": "46",
@@ -411,7 +551,10 @@
     "website": "royalpalace.com",
     "phone": "+1 576-329-3646",
     "address": "7454 Main St, Frisco, TX 75033",
-    "specialty": "Popular for authentic Punjabi dishes and daily lunch specials."
+    "specialty": "Popular for authentic Punjabi dishes and daily lunch specials.",
+    "tags": [
+      "North Indian"
+    ]
   },
   {
     "id": "47",
@@ -420,7 +563,10 @@
     "website": "urbandiner.com",
     "phone": "+1 924-722-1708",
     "address": "6260 Lebanon Rd, Frisco, TX 75035",
-    "specialty": "Popular for authentic North Indian dishes and daily lunch specials."
+    "specialty": "Popular for authentic North Indian dishes and daily lunch specials.",
+    "tags": [
+      "North Indian"
+    ]
   },
   {
     "id": "48",
@@ -429,7 +575,10 @@
     "website": "urbandiner.com",
     "phone": "+1 899-251-8485",
     "address": "4742 Preston Rd, Frisco, TX 75034",
-    "specialty": "Popular for authentic Chettinad dishes and daily lunch specials."
+    "specialty": "Popular for authentic Chettinad dishes and daily lunch specials.",
+    "tags": [
+      "Chettinad"
+    ]
   },
   {
     "id": "49",
@@ -438,7 +587,10 @@
     "website": "tandoordinerfrisco.com",
     "phone": "+1 645-260-1342",
     "address": "4298 Coit Rd, Frisco, TX 75035",
-    "specialty": "Popular for authentic Mughlai dishes and daily lunch specials."
+    "specialty": "Popular for authentic Mughlai dishes and daily lunch specials.",
+    "tags": [
+      "Mughlai"
+    ]
   },
   {
     "id": "50",
@@ -447,7 +599,10 @@
     "website": "royalbowlfrisco.com",
     "phone": "+1 530-683-2218",
     "address": "2403 Preston Rd, Frisco, TX 75035",
-    "specialty": "Popular for authentic Punjabi dishes and daily lunch specials."
+    "specialty": "Popular for authentic Punjabi dishes and daily lunch specials.",
+    "tags": [
+      "North Indian"
+    ]
   },
   {
     "id": "51",
@@ -456,7 +611,10 @@
     "website": "namastehousefrisco.com",
     "phone": "+1 557-573-8316",
     "address": "8039 Custer Rd, Frisco, TX 75035",
-    "specialty": "Popular for authentic South Indian dishes and daily lunch specials."
+    "specialty": "Popular for authentic South Indian dishes and daily lunch specials.",
+    "tags": [
+      "South Indian"
+    ]
   },
   {
     "id": "52",
@@ -465,7 +623,10 @@
     "website": "biryanipointplano.com",
     "phone": "+1 711-616-8946",
     "address": "8521 Custer Rd, Frisco, TX 75035",
-    "specialty": "Popular for authentic South Indian dishes and daily lunch specials."
+    "specialty": "Popular for authentic South Indian dishes and daily lunch specials.",
+    "tags": [
+      "South Indian"
+    ]
   },
   {
     "id": "53",
@@ -474,7 +635,10 @@
     "website": "spicepointdfw.com",
     "phone": "+1 708-824-3408",
     "address": "3011 Legacy Dr, Frisco, TX 75034",
-    "specialty": "Popular for authentic Indo-Chinese dishes and daily lunch specials."
+    "specialty": "Popular for authentic Indo-Chinese dishes and daily lunch specials.",
+    "tags": [
+      "Indo-Chinese"
+    ]
   },
   {
     "id": "54",
@@ -483,7 +647,10 @@
     "website": "masalapointfrisco.com",
     "phone": "+1 896-893-1700",
     "address": "5812 Coit Rd, Frisco, TX 75034",
-    "specialty": "Popular for authentic Mughlai dishes and daily lunch specials."
+    "specialty": "Popular for authentic Mughlai dishes and daily lunch specials.",
+    "tags": [
+      "Mughlai"
+    ]
   },
   {
     "id": "55",
@@ -492,7 +659,10 @@
     "website": "saffronloungedfw.com",
     "phone": "+1 747-807-8401",
     "address": "4482 Lebanon Rd, Frisco, TX 75033",
-    "specialty": "Popular for authentic North Indian dishes and daily lunch specials."
+    "specialty": "Popular for authentic North Indian dishes and daily lunch specials.",
+    "tags": [
+      "North Indian"
+    ]
   },
   {
     "id": "56",
@@ -501,7 +671,10 @@
     "website": "currypalacedfw.com",
     "phone": "+1 558-225-6085",
     "address": "6423 Preston Rd, Frisco, TX 75033",
-    "specialty": "Popular for authentic Street Food dishes and daily lunch specials."
+    "specialty": "Popular for authentic Street Food dishes and daily lunch specials.",
+    "tags": [
+      "Street Food"
+    ]
   },
   {
     "id": "57",
@@ -510,7 +683,10 @@
     "website": "royalhouse.com",
     "phone": "+1 571-873-1835",
     "address": "6911 Custer Rd, Frisco, TX 75035",
-    "specialty": "Popular for authentic Indo-Chinese dishes and daily lunch specials."
+    "specialty": "Popular for authentic Indo-Chinese dishes and daily lunch specials.",
+    "tags": [
+      "Indo-Chinese"
+    ]
   },
   {
     "id": "58",
@@ -519,7 +695,10 @@
     "website": "tandoorgrill.com",
     "phone": "+1 581-935-5700",
     "address": "9939 Coit Rd, Frisco, TX 75033",
-    "specialty": "Popular for authentic Vegetarian dishes and daily lunch specials."
+    "specialty": "Popular for authentic Vegetarian dishes and daily lunch specials.",
+    "tags": [
+      "Vegetarian"
+    ]
   },
   {
     "id": "59",
@@ -528,7 +707,10 @@
     "website": "tandoorhouseplano.com",
     "phone": "+1 935-734-8421",
     "address": "3744 Custer Rd, Frisco, TX 75035",
-    "specialty": "Popular for authentic Chettinad dishes and daily lunch specials."
+    "specialty": "Popular for authentic Chettinad dishes and daily lunch specials.",
+    "tags": [
+      "Chettinad"
+    ]
   },
   {
     "id": "60",
@@ -537,7 +719,10 @@
     "website": "spiceloungedfw.com",
     "phone": "+1 572-475-3706",
     "address": "5198 Coit Rd, Frisco, TX 75035",
-    "specialty": "Popular for authentic Vegetarian dishes and daily lunch specials."
+    "specialty": "Popular for authentic Vegetarian dishes and daily lunch specials.",
+    "tags": [
+      "Vegetarian"
+    ]
   },
   {
     "id": "61",
@@ -546,7 +731,10 @@
     "website": "saffronbistrofrisco.com",
     "phone": "+1 770-801-2317",
     "address": "7155 Coit Rd, Frisco, TX 75035",
-    "specialty": "Popular for authentic Mughlai dishes and daily lunch specials."
+    "specialty": "Popular for authentic Mughlai dishes and daily lunch specials.",
+    "tags": [
+      "Mughlai"
+    ]
   },
   {
     "id": "62",
@@ -555,7 +743,10 @@
     "website": "royalkitchenfrisco.com",
     "phone": "+1 552-378-8510",
     "address": "7901 Lebanon Rd, Frisco, TX 75035",
-    "specialty": "Popular for authentic Hyderabadi dishes and daily lunch specials."
+    "specialty": "Popular for authentic Hyderabadi dishes and daily lunch specials.",
+    "tags": [
+      "Hyderabadi"
+    ]
   },
   {
     "id": "63",
@@ -564,7 +755,10 @@
     "website": "masalabowlfrisco.com",
     "phone": "+1 949-436-6237",
     "address": "6092 Eldorado Pkwy, Frisco, TX 75034",
-    "specialty": "Popular for authentic Vegetarian dishes and daily lunch specials."
+    "specialty": "Popular for authentic Vegetarian dishes and daily lunch specials.",
+    "tags": [
+      "Vegetarian"
+    ]
   },
   {
     "id": "64",
@@ -573,7 +767,10 @@
     "website": "namasteloungedfw.com",
     "phone": "+1 931-209-4512",
     "address": "1749 Coit Rd, Frisco, TX 75034",
-    "specialty": "Popular for authentic North Indian dishes and daily lunch specials."
+    "specialty": "Popular for authentic North Indian dishes and daily lunch specials.",
+    "tags": [
+      "North Indian"
+    ]
   },
   {
     "id": "65",
@@ -582,7 +779,10 @@
     "website": "spicegrillfrisco.com",
     "phone": "+1 936-873-3887",
     "address": "9805 Eldorado Pkwy, Frisco, TX 75035",
-    "specialty": "Popular for authentic Punjabi dishes and daily lunch specials."
+    "specialty": "Popular for authentic Punjabi dishes and daily lunch specials.",
+    "tags": [
+      "North Indian"
+    ]
   },
   {
     "id": "66",
@@ -591,7 +791,10 @@
     "website": "desibowlfrisco.com",
     "phone": "+1 517-717-6879",
     "address": "9848 Custer Rd, Frisco, TX 75035",
-    "specialty": "Popular for authentic Mughlai dishes and daily lunch specials."
+    "specialty": "Popular for authentic Mughlai dishes and daily lunch specials.",
+    "tags": [
+      "Mughlai"
+    ]
   },
   {
     "id": "67",
@@ -600,7 +803,10 @@
     "website": "masalapointdfw.com",
     "phone": "+1 756-385-2408",
     "address": "9330 Main St, Frisco, TX 75033",
-    "specialty": "Popular for authentic Street Food dishes and daily lunch specials."
+    "specialty": "Popular for authentic Street Food dishes and daily lunch specials.",
+    "tags": [
+      "Street Food"
+    ]
   },
   {
     "id": "68",
@@ -609,7 +815,10 @@
     "website": "urbandinerfrisco.com",
     "phone": "+1 822-255-9201",
     "address": "8107 Main St, Frisco, TX 75035",
-    "specialty": "Popular for authentic Indo-Chinese dishes and daily lunch specials."
+    "specialty": "Popular for authentic Indo-Chinese dishes and daily lunch specials.",
+    "tags": [
+      "Indo-Chinese"
+    ]
   },
   {
     "id": "69",
@@ -618,7 +827,10 @@
     "website": "spicebistro.com",
     "phone": "+1 742-483-5724",
     "address": "3962 Main St, Frisco, TX 75033",
-    "specialty": "Popular for authentic Hyderabadi dishes and daily lunch specials."
+    "specialty": "Popular for authentic Hyderabadi dishes and daily lunch specials.",
+    "tags": [
+      "Hyderabadi"
+    ]
   },
   {
     "id": "70",
@@ -627,7 +839,10 @@
     "website": "urbanpalaceplano.com",
     "phone": "+1 598-262-5984",
     "address": "6902 Custer Rd, Frisco, TX 75034",
-    "specialty": "Popular for authentic Punjabi dishes and daily lunch specials."
+    "specialty": "Popular for authentic Punjabi dishes and daily lunch specials.",
+    "tags": [
+      "North Indian"
+    ]
   },
   {
     "id": "71",
@@ -636,7 +851,10 @@
     "website": "saffroncafedfw.com",
     "phone": "+1 652-289-6406",
     "address": "5774 Main St, Frisco, TX 75033",
-    "specialty": "Popular for authentic Punjabi dishes and daily lunch specials."
+    "specialty": "Popular for authentic Punjabi dishes and daily lunch specials.",
+    "tags": [
+      "North Indian"
+    ]
   },
   {
     "id": "72",
@@ -645,7 +863,10 @@
     "website": "curryhousefrisco.com",
     "phone": "+1 916-257-6519",
     "address": "7370 Coit Rd, Frisco, TX 75034",
-    "specialty": "Popular for authentic Chettinad dishes and daily lunch specials."
+    "specialty": "Popular for authentic Chettinad dishes and daily lunch specials.",
+    "tags": [
+      "Chettinad"
+    ]
   },
   {
     "id": "73",
@@ -654,7 +875,10 @@
     "website": "desihouseplano.com",
     "phone": "+1 775-297-8680",
     "address": "9123 Coit Rd, Frisco, TX 75033",
-    "specialty": "Popular for authentic Punjabi dishes and daily lunch specials."
+    "specialty": "Popular for authentic Punjabi dishes and daily lunch specials.",
+    "tags": [
+      "North Indian"
+    ]
   },
   {
     "id": "74",
@@ -663,7 +887,10 @@
     "website": "urbanpalaceplano.com",
     "phone": "+1 614-906-1707",
     "address": "5580 Main St, Frisco, TX 75034",
-    "specialty": "Popular for authentic Vegetarian dishes and daily lunch specials."
+    "specialty": "Popular for authentic Vegetarian dishes and daily lunch specials.",
+    "tags": [
+      "Vegetarian"
+    ]
   },
   {
     "id": "75",
@@ -672,7 +899,10 @@
     "website": "saffronbistrodfw.com",
     "phone": "+1 949-554-7448",
     "address": "5896 Main St, Frisco, TX 75035",
-    "specialty": "Popular for authentic Street Food dishes and daily lunch specials."
+    "specialty": "Popular for authentic Street Food dishes and daily lunch specials.",
+    "tags": [
+      "Street Food"
+    ]
   },
   {
     "id": "76",
@@ -681,7 +911,10 @@
     "website": "biryanilounge.com",
     "phone": "+1 548-397-5618",
     "address": "8764 Custer Rd, Frisco, TX 75033",
-    "specialty": "Popular for authentic Hyderabadi dishes and daily lunch specials."
+    "specialty": "Popular for authentic Hyderabadi dishes and daily lunch specials.",
+    "tags": [
+      "Hyderabadi"
+    ]
   },
   {
     "id": "77",
@@ -690,7 +923,10 @@
     "website": "saffronkitchenplano.com",
     "phone": "+1 919-200-6738",
     "address": "8978 Coit Rd, Frisco, TX 75035",
-    "specialty": "Popular for authentic Street Food dishes and daily lunch specials."
+    "specialty": "Popular for authentic Street Food dishes and daily lunch specials.",
+    "tags": [
+      "Street Food"
+    ]
   },
   {
     "id": "78",
@@ -699,7 +935,10 @@
     "website": "tandoorcafefrisco.com",
     "phone": "+1 839-468-8609",
     "address": "2571 Eldorado Pkwy, Frisco, TX 75034",
-    "specialty": "Popular for authentic Vegetarian dishes and daily lunch specials."
+    "specialty": "Popular for authentic Vegetarian dishes and daily lunch specials.",
+    "tags": [
+      "Vegetarian"
+    ]
   },
   {
     "id": "79",
@@ -708,7 +947,10 @@
     "website": "currypoint.com",
     "phone": "+1 874-814-9365",
     "address": "6423 Custer Rd, Frisco, TX 75033",
-    "specialty": "Popular for authentic Mughlai dishes and daily lunch specials."
+    "specialty": "Popular for authentic Mughlai dishes and daily lunch specials.",
+    "tags": [
+      "Mughlai"
+    ]
   },
   {
     "id": "80",
@@ -717,7 +959,10 @@
     "website": "masalapalace.com",
     "phone": "+1 949-421-4907",
     "address": "1604 Preston Rd, Frisco, TX 75034",
-    "specialty": "Popular for authentic South Indian dishes and daily lunch specials."
+    "specialty": "Popular for authentic South Indian dishes and daily lunch specials.",
+    "tags": [
+      "South Indian"
+    ]
   },
   {
     "id": "81",
@@ -726,7 +971,10 @@
     "website": "namastecafeplano.com",
     "phone": "+1 879-722-8638",
     "address": "2892 Eldorado Pkwy, Frisco, TX 75034",
-    "specialty": "Popular for authentic Street Food dishes and daily lunch specials."
+    "specialty": "Popular for authentic Street Food dishes and daily lunch specials.",
+    "tags": [
+      "Street Food"
+    ]
   },
   {
     "id": "82",
@@ -735,7 +983,10 @@
     "website": "biryanibowl.com",
     "phone": "+1 578-290-6773",
     "address": "1994 Lebanon Rd, Frisco, TX 75033",
-    "specialty": "Popular for authentic Chettinad dishes and daily lunch specials."
+    "specialty": "Popular for authentic Chettinad dishes and daily lunch specials.",
+    "tags": [
+      "Chettinad"
+    ]
   },
   {
     "id": "83",
@@ -744,7 +995,10 @@
     "website": "currygrillfrisco.com",
     "phone": "+1 704-546-2073",
     "address": "2587 Custer Rd, Frisco, TX 75034",
-    "specialty": "Popular for authentic Chettinad dishes and daily lunch specials."
+    "specialty": "Popular for authentic Chettinad dishes and daily lunch specials.",
+    "tags": [
+      "Chettinad"
+    ]
   },
   {
     "id": "84",
@@ -753,7 +1007,10 @@
     "website": "royalkitchen.com",
     "phone": "+1 795-780-2154",
     "address": "3500 Legacy Dr, Frisco, TX 75035",
-    "specialty": "Popular for authentic South Indian dishes and daily lunch specials."
+    "specialty": "Popular for authentic South Indian dishes and daily lunch specials.",
+    "tags": [
+      "South Indian"
+    ]
   },
   {
     "id": "85",
@@ -762,7 +1019,10 @@
     "website": "masalapointfrisco.com",
     "phone": "+1 560-281-4750",
     "address": "1132 Coit Rd, Frisco, TX 75033",
-    "specialty": "Popular for authentic Street Food dishes and daily lunch specials."
+    "specialty": "Popular for authentic Street Food dishes and daily lunch specials.",
+    "tags": [
+      "Street Food"
+    ]
   },
   {
     "id": "86",
@@ -771,7 +1031,10 @@
     "website": "masaladinerplano.com",
     "phone": "+1 601-503-4094",
     "address": "5432 Lebanon Rd, Frisco, TX 75033",
-    "specialty": "Popular for authentic Mughlai dishes and daily lunch specials."
+    "specialty": "Popular for authentic Mughlai dishes and daily lunch specials.",
+    "tags": [
+      "Mughlai"
+    ]
   },
   {
     "id": "87",
@@ -780,7 +1043,10 @@
     "website": "namastepalacefrisco.com",
     "phone": "+1 863-609-2905",
     "address": "7294 Lebanon Rd, Frisco, TX 75033",
-    "specialty": "Popular for authentic Hyderabadi dishes and daily lunch specials."
+    "specialty": "Popular for authentic Hyderabadi dishes and daily lunch specials.",
+    "tags": [
+      "Hyderabadi"
+    ]
   },
   {
     "id": "88",
@@ -789,7 +1055,10 @@
     "website": "desikitchenfrisco.com",
     "phone": "+1 905-624-5565",
     "address": "4720 Lebanon Rd, Frisco, TX 75033",
-    "specialty": "Popular for authentic Vegetarian dishes and daily lunch specials."
+    "specialty": "Popular for authentic Vegetarian dishes and daily lunch specials.",
+    "tags": [
+      "Vegetarian"
+    ]
   },
   {
     "id": "89",
@@ -798,7 +1067,10 @@
     "website": "urbandiner.com",
     "phone": "+1 768-285-3555",
     "address": "8330 Custer Rd, Frisco, TX 75034",
-    "specialty": "Popular for authentic Vegetarian dishes and daily lunch specials."
+    "specialty": "Popular for authentic Vegetarian dishes and daily lunch specials.",
+    "tags": [
+      "Vegetarian"
+    ]
   },
   {
     "id": "90",
@@ -807,7 +1079,10 @@
     "website": "tandoorkitchen.com",
     "phone": "+1 471-939-4555",
     "address": "9810 Coit Rd, Frisco, TX 75033",
-    "specialty": "Popular for authentic Hyderabadi dishes and daily lunch specials."
+    "specialty": "Popular for authentic Hyderabadi dishes and daily lunch specials.",
+    "tags": [
+      "Hyderabadi"
+    ]
   },
   {
     "id": "91",
@@ -816,7 +1091,10 @@
     "website": "currypointplano.com",
     "phone": "+1 735-225-7582",
     "address": "1217 Preston Rd, Frisco, TX 75033",
-    "specialty": "Popular for authentic South Indian dishes and daily lunch specials."
+    "specialty": "Popular for authentic South Indian dishes and daily lunch specials.",
+    "tags": [
+      "South Indian"
+    ]
   },
   {
     "id": "92",
@@ -825,7 +1103,10 @@
     "website": "royaldinerdfw.com",
     "phone": "+1 567-562-5427",
     "address": "9267 Custer Rd, Frisco, TX 75033",
-    "specialty": "Popular for authentic Vegetarian dishes and daily lunch specials."
+    "specialty": "Popular for authentic Vegetarian dishes and daily lunch specials.",
+    "tags": [
+      "Vegetarian"
+    ]
   },
   {
     "id": "93",
@@ -834,7 +1115,10 @@
     "website": "currylounge.com",
     "phone": "+1 627-789-9093",
     "address": "8697 Preston Rd, Frisco, TX 75033",
-    "specialty": "Popular for authentic Mughlai dishes and daily lunch specials."
+    "specialty": "Popular for authentic Mughlai dishes and daily lunch specials.",
+    "tags": [
+      "Mughlai"
+    ]
   },
   {
     "id": "94",
@@ -843,7 +1127,10 @@
     "website": "desidinerfrisco.com",
     "phone": "+1 610-497-1560",
     "address": "2893 Main St, Frisco, TX 75034",
-    "specialty": "Popular for authentic Indo-Chinese dishes and daily lunch specials."
+    "specialty": "Popular for authentic Indo-Chinese dishes and daily lunch specials.",
+    "tags": [
+      "Indo-Chinese"
+    ]
   },
   {
     "id": "95",
@@ -852,7 +1139,10 @@
     "website": "royalpoint.com",
     "phone": "+1 606-612-7932",
     "address": "7942 Custer Rd, Frisco, TX 75033",
-    "specialty": "Popular for authentic Mughlai dishes and daily lunch specials."
+    "specialty": "Popular for authentic Mughlai dishes and daily lunch specials.",
+    "tags": [
+      "Mughlai"
+    ]
   },
   {
     "id": "96",
@@ -861,7 +1151,10 @@
     "website": "urbankitchenplano.com",
     "phone": "+1 768-735-1624",
     "address": "7248 Coit Rd, Frisco, TX 75034",
-    "specialty": "Popular for authentic North Indian dishes and daily lunch specials."
+    "specialty": "Popular for authentic North Indian dishes and daily lunch specials.",
+    "tags": [
+      "North Indian"
+    ]
   },
   {
     "id": "97",
@@ -870,7 +1163,10 @@
     "website": "tandoorbistrodfw.com",
     "phone": "+1 822-525-8251",
     "address": "7638 Preston Rd, Frisco, TX 75033",
-    "specialty": "Popular for authentic Punjabi dishes and daily lunch specials."
+    "specialty": "Popular for authentic Punjabi dishes and daily lunch specials.",
+    "tags": [
+      "North Indian"
+    ]
   },
   {
     "id": "98",
@@ -879,7 +1175,10 @@
     "website": "tandoorhouse.com",
     "phone": "+1 588-943-6683",
     "address": "2055 Legacy Dr, Frisco, TX 75033",
-    "specialty": "Popular for authentic South Indian dishes and daily lunch specials."
+    "specialty": "Popular for authentic South Indian dishes and daily lunch specials.",
+    "tags": [
+      "South Indian"
+    ]
   },
   {
     "id": "99",
@@ -888,7 +1187,10 @@
     "website": "urbanhousefrisco.com",
     "phone": "+1 772-702-3370",
     "address": "7033 Custer Rd, Frisco, TX 75034",
-    "specialty": "Popular for authentic Chettinad dishes and daily lunch specials."
+    "specialty": "Popular for authentic Chettinad dishes and daily lunch specials.",
+    "tags": [
+      "Chettinad"
+    ]
   },
   {
     "id": "100",
@@ -897,6 +1199,9 @@
     "website": "urbandinerfrisco.com",
     "phone": "+1 678-474-5706",
     "address": "7511 Legacy Dr, Frisco, TX 75035",
-    "specialty": "Popular for authentic North Indian dishes and daily lunch specials."
+    "specialty": "Popular for authentic North Indian dishes and daily lunch specials.",
+    "tags": [
+      "North Indian"
+    ]
   }
 ]
