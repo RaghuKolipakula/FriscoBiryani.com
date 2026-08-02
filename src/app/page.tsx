@@ -241,9 +241,12 @@ export default function ViralQuizPage() {
               <span>Personality Quiz</span>
             </div>
             
-            <h1 className="text-5xl sm:text-6xl font-black text-white tracking-tight leading-tight">
-              What kind of <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">Biryani Eater</span> are you?
+            <h1 className="text-5xl sm:text-6xl font-black text-white tracking-tight leading-tight mb-4">
+              Find the Best <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">Frisco Biryani</span>
             </h1>
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-200">
+              What kind of Biryani eater are you?
+            </h2>
             
             <p className="text-slate-400 text-lg">
               Take this 5-question quiz to discover your biryani archetype and find your perfect weekend food drop match.

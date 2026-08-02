@@ -5,12 +5,15 @@ import Script from "next/script";
 import { Flame } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Frisco Biryani Quiz | What kind of Biryani eater are you?",
-  description: "Take the viral Frisco Biryani quiz to find your personality archetype and get matched with the best local biryani restaurant in Frisco, TX.",
-  keywords: ["Frisco Biryani", "Best Biryani in Frisco", "Biryani Quiz", "Frisco TX Food", "Indian Food Frisco TX"],
+  title: "Best Frisco Biryani | Find Top Indian Restaurants in Frisco, TX",
+  description: "Looking for the best Frisco Biryani? Take our quick quiz to discover top-rated authentic biryani restaurants in Frisco, TX, matched to your taste and spice level.",
+  keywords: ["Frisco Biryani", "Best Biryani in Frisco", "Frisco TX Biryani", "Indian Restaurants Frisco", "Top Biryani Places Frisco", "Authentic Biryani Frisco TX"],
+  alternates: {
+    canonical: 'https://friscobiryani.com',
+  },
   openGraph: {
-    title: "Frisco Biryani Quiz | Discover your Biryani Vibe",
-    description: "Take the viral Frisco Biryani quiz and get matched with the best local biryani restaurant in Frisco, TX.",
+    title: "Best Frisco Biryani | Find Top Indian Restaurants in Frisco, TX",
+    description: "Looking for the best Frisco Biryani? Take our quick quiz to discover top-rated authentic biryani restaurants in Frisco, TX, matched to your taste.",
     url: 'https://friscobiryani.com',
     siteName: 'FriscoBiryani.com',
     locale: 'en_US',
@@ -18,8 +21,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Frisco Biryani Quiz | Discover your Biryani Vibe",
-    description: "Take the viral Frisco Biryani quiz and get matched with the best local biryani restaurant in Frisco, TX.",
+    title: "Best Frisco Biryani | Find Top Indian Restaurants in Frisco, TX",
+    description: "Looking for the best Frisco Biryani? Take our quick quiz to discover top-rated authentic biryani restaurants in Frisco, TX.",
   }
 };
 
@@ -41,6 +44,23 @@ export default function RootLayout({
             gtag('config', 'G-G1QVV70QD0');
           `}
         </Script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Frisco Biryani",
+              "url": "https://friscobiryani.com",
+              "description": "Find the best Frisco Biryani restaurants and local Indian food spots.",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://friscobiryani.com/?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            })
+          }}
+        />
       </head>
       <body className="bg-slate-950 text-slate-100 min-h-screen flex flex-col selection:bg-amber-500 selection:text-slate-950">
         
