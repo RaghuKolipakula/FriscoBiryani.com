@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
-import { Search, MapPin, Star, Tag, ChevronRight, Award } from "lucide-react";
+import { Search, MapPin, Star, Tag, ChevronRight, Award, ChefHat } from "lucide-react";
 import restaurantsData from "../data/restaurants.json";
 
 const ALL_TAGS = Array.from(new Set(restaurantsData.flatMap(r => r.tags))).sort();
@@ -56,25 +56,39 @@ export default function DirectoryPage() {
         </div>
       </section>
 
-      {/* Editor's Highlight */}
+      {/* Featured Highlights */}
       <section className="px-6 sm:px-12 lg:px-24 py-12 bg-amber-50/50">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
           <Link 
             href="/best-biryani-frisco-tx"
-            className="group flex flex-col md:flex-row items-center gap-6 p-6 md:p-8 rounded-3xl bg-white border border-amber-200 hover:border-amber-400 shadow-md hover:shadow-lg transition-all"
+            className="group flex flex-col items-center gap-6 p-6 rounded-3xl bg-white border border-amber-200 hover:border-amber-400 shadow-md hover:shadow-lg transition-all text-center"
           >
             <div className="w-16 h-16 shrink-0 rounded-2xl bg-amber-100 flex items-center justify-center text-amber-600 group-hover:scale-110 transition-transform">
               <Award className="w-8 h-8" />
             </div>
-            <div className="flex-1 text-center md:text-left">
-              <h2 className="text-xl md:text-2xl font-bold text-amber-700 mb-2">Editor's Choice: The Top 10 Best Biryani in Frisco</h2>
-              <p className="text-slate-600">We ranked the absolute best spots for authentic Biryani. See who took the #1 spot this year.</p>
+            <div>
+              <h2 className="text-xl font-bold text-amber-700 mb-2">Editor's Choice: The Top 10 Best Biryani</h2>
+              <p className="text-slate-600 text-sm">We ranked the absolute best spots for authentic Biryani. See who took the #1 spot this year.</p>
             </div>
-            <div className="shrink-0">
-              <span className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold hover:shadow-lg hover:opacity-90 transition-all">
-                View the List <ChevronRight className="w-5 h-5" />
-              </span>
+            <span className="mt-auto inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold hover:shadow-lg hover:opacity-90 transition-all w-full justify-center">
+              View the List <ChevronRight className="w-5 h-5" />
+            </span>
+          </Link>
+
+          <Link 
+            href="/quiz"
+            className="group flex flex-col items-center gap-6 p-6 rounded-3xl bg-white border border-amber-200 hover:border-amber-400 shadow-md hover:shadow-lg transition-all text-center"
+          >
+            <div className="w-16 h-16 shrink-0 rounded-2xl bg-amber-100 flex items-center justify-center text-amber-600 group-hover:scale-110 transition-transform">
+              <ChefHat className="w-8 h-8" />
             </div>
+            <div>
+              <h2 className="text-xl font-bold text-amber-700 mb-2">The Biryani Personality Quiz</h2>
+              <p className="text-slate-600 text-sm">What kind of Biryani eater are you? Take the quiz to find your perfect local restaurant match.</p>
+            </div>
+            <span className="mt-auto inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 text-white font-bold hover:shadow-lg hover:opacity-90 transition-all w-full justify-center">
+              Take the Quiz <ChevronRight className="w-5 h-5" />
+            </span>
           </Link>
         </div>
       </section>
