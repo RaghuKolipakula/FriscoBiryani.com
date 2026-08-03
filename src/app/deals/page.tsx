@@ -1,6 +1,6 @@
-import React from 'react';
 import type { Metadata } from 'next';
 import { Clock, Tag } from 'lucide-react';
+import Link from 'next/link';
 
 export const revalidate = 60; // Revalidate every 60s for near real-time deals
 
@@ -48,9 +48,12 @@ export default async function DealsPage() {
           <h1 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-4">
             Live Daily <span className="text-amber-600">Deals</span>
           </h1>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-6">
             Hyper-local, auto-expiring offers from your favorite Frisco biryani spots. Grab them before they're gone!
           </p>
+          <Link href="/deals/publish" className="inline-flex items-center gap-2 text-sm font-bold text-amber-600 hover:text-amber-700 bg-amber-50 px-4 py-2 rounded-full border border-amber-200 transition-colors">
+            Restaurant Owner? Post a Deal &rarr;
+          </Link>
         </div>
 
         {deals.length === 0 ? (
