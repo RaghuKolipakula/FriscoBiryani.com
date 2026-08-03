@@ -1,11 +1,18 @@
 import { NextResponse } from 'next/server';
+import { getCloudflareContext } from "@opennextjs/cloudflare";
 
 export async function POST(request: Request) {
   try {
     const payload = await request.json();
     const { restaurant_name, deal_description, category, price, hours_valid, image_url, access_code } = payload as any;
 
-    const env = process.env as any;
+    let env = process.env as any;
+    try {
+      const ctx = await getCloudflareContext({ async: true });
+      if (ctx && ctx.env) env = ctx.env;
+    } catch(e) {
+      // fallback
+    }
     
     // Simple access code check (defaults to 'FRISCO2026' if not set in environment)
     const expectedCode = env.RESTAURANT_ACCESS_CODE || 'FRISCO2026';

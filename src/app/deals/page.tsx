@@ -2,7 +2,9 @@ import type { Metadata } from 'next';
 import { Clock, Tag } from 'lucide-react';
 import Link from 'next/link';
 
-export const revalidate = 60; // Revalidate every 60s for near real-time deals
+import { getCloudflareContext } from "@opennextjs/cloudflare";
+
+export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: "Live Biryani Deals in Frisco Today | Auto-Expiring Offers",
@@ -24,7 +26,14 @@ export default async function DealsPage() {
   let deals: Deal[] = [];
   
   try {
-    const env = process.env as any;
+    let env = process.env as any;
+    try {
+      const ctx = await getCloudflareContext({ async: true });
+      if (ctx && ctx.env) env = ctx.env;
+    } catch(e) {
+      // fallback to process.env
+    }
+
     if (env.DB) {
       // Query filters out any deals where valid_until < CURRENT_TIMESTAMP
       const { results } = await env.DB.prepare(

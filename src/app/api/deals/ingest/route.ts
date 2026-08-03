@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { getCloudflareContext } from "@opennextjs/cloudflare";
 
 
 export async function POST(request: Request) {
@@ -19,7 +20,13 @@ export async function POST(request: Request) {
     
     const id = crypto.randomUUID();
 
-    const env = process.env as any;
+    let env = process.env as any;
+    try {
+      const ctx = await getCloudflareContext({ async: true });
+      if (ctx && ctx.env) env = ctx.env;
+    } catch(e) {
+      // fallback
+    }
     
     if (!env.DB) {
       console.warn("DB binding not found. Skipping database insertion.");
