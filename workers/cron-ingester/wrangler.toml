@@ -1,0 +1,11 @@
+name = "frisco-cron-ingester"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+
+[triggers]
+crons = ["0 9 * * *"] # Run every day at 9 AM UTC
+
+[[d1_databases]]
+binding = "DB"
+database_name = "frisco-biryani-db"
+database_id = "4a8f51ab-68d0-4f94-8ebe-1ce1808aea46"
