@@ -6,3 +6,8 @@ compatibility_flags = ["nodejs_compat"]
 [assets]
 binding = "ASSETS"
 directory = ".open-next/assets"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "frisco-biryani-db"
+database_id = "4a8f51ab-68d0-4f94-8ebe-1ce1808aea46"
