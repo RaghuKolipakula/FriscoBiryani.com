@@ -83,6 +83,15 @@ export default function RootLayout({
                 </span>
               </div>
             </Link>
+
+            {/* Header Links */}
+            <div className="hidden sm:flex items-center gap-6 text-sm font-bold text-slate-600">
+              <Link href="/" className="hover:text-amber-600 transition-colors">Directory</Link>
+              <Link href="/deals" className="text-amber-600 hover:text-amber-700 transition-colors flex items-center gap-1 bg-amber-50 px-3 py-1.5 rounded-full border border-amber-200 shadow-sm">
+                 <Flame className="w-4 h-4"/> Live Deals
+              </Link>
+            </div>
+
           </div>
         </header>
 
@@ -113,6 +122,7 @@ export default function RootLayout({
               <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">Quick Links</h4>
               <ul className="space-y-2.5 text-sm text-slate-600 flex flex-col sm:items-end">
                 <li><Link href="/" className="hover:text-amber-600 transition-colors">Restaurant Directory</Link></li>
+                <li><Link href="/deals" className="text-amber-600 font-bold hover:text-amber-700 transition-colors">Daily Deals (Live!)</Link></li>
                 <li><Link href="/quiz" className="hover:text-amber-600 transition-colors">Take the Biryani Quiz</Link></li>
                 <li><Link href="/privacy" className="hover:text-amber-600 transition-colors">Privacy Policy</Link></li>
                 <li><Link href="/terms" className="hover:text-amber-600 transition-colors">Terms of Service</Link></li>
